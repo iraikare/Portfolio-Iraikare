@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Portfólio - Iraikare Rodrigues</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Caveat:wght@400..700&family=Nova+Square&display=swap" rel="stylesheet">
+  <script>
+    function abrir(){
+    document.getElementById('esmaecer').style.visibility = 'visible';
+    document.getElementById('menu').style.visibility = 'visible';
+    document.getElementById('x').style.visibility = 'visible';
+    document.getElementById('sanduiche').style.visibility = 'hidden';
+}
+function fechar(){
+    document.getElementById('esmaecer').style.visibility = 'hidden';
+    document.getElementById('menu').style.visibility = 'hidden';
+    document.getElementById('x').style.visibility = 'hidden';
+    document.getElementById('sanduiche').style.visibility = 'visible';
+}
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Michroma", sans-serif;
+    }
+
+    body {
+      background-color: #F2EAD0;
+    }
+    div#esmaecer{
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 2;
+        visibility: hidden;
+    }
+    header #menu{
+        position: fixed;
+        visibility: hidden;
+        padding: 2em 1.5em;
+        height: 100vh;
+        background-color: white;
+        top: 0;
+        right: 0;
+        text-align: right;
+        list-style-type: none;
+        z-index: 2;
+        display: block;
+    }
+    #menusand{
+      visibility: hidden;
+      position: absolute;
+    right: 2em;
+    width: 50px;
+    top: 2em;
+    }
+    #menu li{
+      padding: 0.5em 0;
+    }
+    
+
+    .margem {
+      margin: 0 auto;
+      padding: 0 2em;
+      max-width: 1140px;
+    }
+
+    header {
+      background-image: url(imagens/bg.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom;
+      padding-bottom: 10em;
+    }
+
+    header nav, header nav ol{
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+    }
+
+    header nav {
+      align-items: flex-end;
+      font-size: 1em;
+      padding: 2.15em 0 3.15em 0;
+    }
+
+    header nav ol {
+      column-gap: 2.19em;
+    }
+
+    header nav ol li a, footer ul li a, #sobre ul li a {
+      text-decoration: none;
+      color: black;
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+    }
+
+    header nav ol li a:hover {
+      font-weight: 500;
+    }
+
+    header nav div p b, footer div p b {
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+    }
+
+    header nav div a, footer div a {
+      text-decoration: none;
+      color: black;
+    }
+
+    header section section,#social-media .margem, footer .margem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header figure{
+      width: 40%;
+    }
+    header figure img{
+      width: 100%;
+    }
+    header h1 img{
+      width: 100%;
+    }
+    header>section>section>div{
+      width: 55%;
+    }
+
+    h2#ano {
+      position: absolute;
+      left: 75%;
+      top: 5%;
+      font-family: "Nova Square", sans-serif;
+      line-height: 1.5em;
+      font-size: 4.4em;
+      color: black;
+      font-weight: 500;
+      border-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgzIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDQ4MyAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01IDExNS41VjVINDc3LjVWMTE1LjVINVoiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMC41Ii8+CjxjaXJjbGUgY3g9IjUiIGN5PSI1IiByPSI1IiBmaWxsPSJibGFjayIvPgo8Y2lyY2xlIGN4PSI0NzgiIGN5PSI1IiByPSI1IiBmaWxsPSJibGFjayIvPgo8Y2lyY2xlIGN4PSI1IiBjeT0iMTE1IiByPSI1IiBmaWxsPSJibGFjayIvPgo8Y2lyY2xlIGN4PSI0NzgiIGN5PSIxMTUiIHI9IjUiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=") 13 / 13px / 13px repeat;
+      border-style: solid;
+      width: fit-content;
+      margin-top: 0.3em;
+    }
+
+    #sobre {
+      color: #23400E;
+    }
+    #sobre>section{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 4em;
+    }
+
+    #sobre p {
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+      font-size: 1.25em;
+      text-align: right;
+      padding: 1em;
+      width: fit-content;
+      margin-bottom: 2em;
+      border-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTY0IiBoZWlnaHQ9IjE1OCIgdmlld0JveD0iMCAwIDU2NCAxNTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01IDE1M1Y1SDU1OVYxNTNINVoiIHN0cm9rZT0iIzIzNDAwRSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz4KPGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjUiIGZpbGw9IiMyMzQwMEUiLz4KPGNpcmNsZSBjeD0iNTU5IiBjeT0iNSIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8Y2lyY2xlIGN4PSI1IiBjeT0iMTUzIiByPSI1IiBmaWxsPSIjMjM0MDBFIi8+CjxjaXJjbGUgY3g9IjU1OSIgY3k9IjE1MyIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8L3N2Zz4K") 13 / 13px / 13px repeat;
+      border-style: solid;
+    }
+
+    #sobre h3 {
+      font-family: "Caveat", cursive;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-size: 4em;
+    }
+
+    #sobre div div {
+      display: flex;
+      align-items: center;
+      column-gap: 1em;
+      justify-content: flex-end;
+    }
+
+    #sobre ul, footer ul {
+      list-style: none;
+      display: flex;
+      column-gap: 2.25em;
+      text-align: right;
+      justify-content: right;
+    }
+
+    #sobre ul li a, footer ul li a {
+      display: flex;
+      align-items: center;
+      column-gap: 0.63em;
+      font-size: 1em;
+      color: #23400E;
+    }
+    #sobre figure img{
+      width: 100%;
+    }
+    #tecnologias {
+    flex-wrap: wrap;
+    margin-top: 3em;
+    display: flex
+;
+    justify-content: center;
+    width: 100%;
+    gap: 2em;
+    }
+
+    #tecnologias img {
+      max-height: 50px;
+      object-fit: cover;
+    }
+
+    #projetos, #vetorizacoes, #identidades {
+      padding: 2.5em 0 3.5em 0;
+    }
+    #projetos, #social-media{
+      background-color: #FFF9E8;
+    }
+
+    #projetos {
+      margin-top: 3.75em;
+    }
+
+    #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3, #social-media h3 {
+      font-size: 2.5em;
+      color: #23400E;
+      font-weight: 400;
+      width: fit-content;
+      border-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTY0IiBoZWlnaHQ9IjE1OCIgdmlld0JveD0iMCAwIDU2NCAxNTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01IDE1M1Y1SDU1OVYxNTNINVoiIHN0cm9rZT0iIzIzNDAwRSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz4KPGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjUiIGZpbGw9IiMyMzQwMEUiLz4KPGNpcmNsZSBjeD0iNTU5IiBjeT0iNSIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8Y2lyY2xlIGN4PSI1IiBjeT0iMTUzIiByPSI1IiBmaWxsPSIjMjM0MDBFIi8+CjxjaXJjbGUgY3g9IjU1OSIgY3k9IjE1MyIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8L3N2Zz4K") 13 / 13px / 13px repeat;
+      border-style: solid;
+    }
+
+    #projetos input, #social-media input {
+      color: white;
+      background-color: #BF395D;
+      border-radius: 5px;
+      padding: 5px 10px;
+      border: none;
+      font-size: 0.85em;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    #projetos input:hover, #social-media input:hover {
+      background-color: #23400E;
+    }
+
+    #projetos div>div>div {
+      display: flex;
+    }
+
+    #projetos div>div>div img {
+    width: 30%;
+    height: auto;
+    object-fit: contain;
+    }
+    #projetos>div {
+      display: flex;
+    }
+
+    #projetos>section>section {
+      margin-top: 3.75em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 2em;
+    }
+
+    h4 {
+      font-size: 0.8em;
+      font-weight: 300;
+    }
+    #projetos h4{
+        width: 20em;
+      }
+
+    h5 {
+      margin: 2em 1em;
+      font-size: 0.8em;
+      color: #23400E;
+      font-weight: 400;
+      width: fit-content;
+      border-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTY0IiBoZWlnaHQ9IjE1OCIgdmlld0JveD0iMCAwIDU2NCAxNTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01IDE1M1Y1SDU1OVYxNTNINVoiIHN0cm9rZT0iIzIzNDAwRSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz4KPGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjUiIGZpbGw9IiMyMzQwMEUiLz4KPGNpcmNsZSBjeD0iNTU5IiBjeT0iNSIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8Y2lyY2xlIGN4PSI1IiBjeT0iMTUzIiByPSI1IiBmaWxsPSIjMjM0MDBFIi8+CjxjaXJjbGUgY3g9IjU1OSIgY3k9IjE1MyIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8L3N2Zz4K") 13 / 13px / 13px repeat;
+      border-style: solid;
+    }
+
+    #social-media .margem {
+      padding: 3.75em 2em;
+    }
+
+    #social-media p, #social-media input {
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+
+    #social-media h3 {
+      margin: 1em 0;
+    }
+
+    #social-media input {
+      padding: 10px 20px;
+    }
+
+    #social-media {
+      background-image: url(imagens/vector-sm.svg);
+      background-repeat: no-repeat;
+      background-position: top 0 left 0;
+    }
+
+    #social-media div>div {
+      display: flex;
+      max-width: 90%;
+      flex-wrap: wrap;
+      column-gap: 1em;
+      row-gap: 1em;
+    }
+
+    #vetorizacoes div, #identidades div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3.75em;
+    }
+
+    #vetorizacoes div img {
+      max-width: 22em;
+    }
+
+    footer {
+      background-image: url(imagens/footer-bg.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top;
+      padding-top: 13em;
+      padding-bottom: 7em;
+      background-color: #FFF9E8;
+    }
+    #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3{
+      margin: 0 auto;
+      text-align: center;
+    }
+    .mockup img{
+      max-width: 100%;
+    }
+    #projetos .margem>section>div{
+      max-width: 48%;
+      display: flex;
+      justify-content: space-between;
+      align-items: top;
+    }
+    #projetos div>div>div img {
+    width: 1.5em;
+    height: 1.5em;
+    object-fit: contain;
+}
+#projetos #bemtevista>div>div img{
+  width: 2.5em;
+    height: 2em;
+    object-fit: contain;
+}
+
+#projetos #soularte>div>div img{
+  width: 4em;
+    height: 2em;
+    object-fit: contain;
+}
+#sobre p a{
+  font-weight: 500;
+  font-family: "Lato", sans-serif;
+  font-size: 1em;
+  text-decoration: underline;
+
+}
+#sobre>section>div{
+  width: 50%;
+}
+#sobre>section>figure{
+  width: 45%;
+}
+
+    @media screen and (max-width: 1024px){
+      
+      header>section>section{
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+      }
+      #sobre>section{
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+      }
+      #sobre div div{
+        justify-content: center;
+      }
+      #sobre p{
+        text-align: center;
+      }
+      #sobre ul{
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 1em;
+      }
+      #sobre h3{
+        font-size: 3em;
+      }
+      #vetorizacoes div, #identidades div{
+        justify-content: space-evenly;
+      }
+      #identidades div img{
+        width: 20vw;
+      }
+      #vetorizacoes div img{
+        width: 25vw;
+      }
+      #social-media h3{
+        margin: 1em auto;
+      }
+      #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3, #social-media h3{
+        font-size: 1.6em;
+      }
+      #social-media .margem{
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 3em;
+      }
+      #social-media div>div{
+        max-width: 100%;
+      }
+      #social-media p{
+        padding-top: 3em;
+        width: fit-content;
+        text-align: center;
+        margin: 0 auto;
+      }
+      #projetos h4, #projetos h5, #projetos input{
+        font-size: 1em;
+      }
+    
+      #projetos .margem>section>div{
+      max-width: 100%;
+      justify-content: center;
+      }
+      #projetos div>div>div img {
+      height: 60%;
+      }
+      #projetos .mockup{
+        width: 40%;
+      }
+      #projetos .margem>section{
+        justify-content: center;
+      }
+      #sobre ul li a, #sobre p{
+        font-size: 1.2rem;
+      }
+      h2#ano{
+        font-size: 1.8em;
+        left: 75%;
+        top: 13%;
+      }
+      #sobre>section>div>div>img{
+        width: 10%;
+      }
+      header{
+        padding-bottom: 8em;
+      }
+      header>section>section>div{
+        width: 55%;
+      }
+      #sobre>section>div{
+        width: 90%;
+      }
+      #sobre>section>figure {
+        display: none;
+      }
+      #tecnologias{
+        gap:1em;
+      }
+      #tecnologias img{
+        height: 40px;
+      }
+      #social-media p, #social-media input {
+        font-size: 1.2em;
+      }
+      #menusand{
+      visibility: visible;
+    }
+    #menudesk{
+      display: none;
+    }
+
+    }
+    @media screen and (max-width: 770px){
+      header>section>section{
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+      }
+      header>section>section>div{
+        width: 100%;
+      }
+      header>section>section>figure{
+        width: 100%;
+      }
+      #sobre>section>figure {
+        display: block;
+        width: 100%;
+      }
+      #sobre h3{
+        line-height: 0.7em;
+        margin-bottom: 0.2em;
+      }
+      #sobre>section>div>div>img {
+        width: 30%;
+    }
+    #tecnologias img {
+        height: 30px;
+    }
+    #projetos .margem>section>div {
+        max-width: 100%;
+        justify-content: center;
+        flex-wrap: wrap-reverse;
+    }
+    #projetos .mockup {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    #projetos .margem>section>div>div{
+      max-width: 98%;
+    }
+    #projetos div>div>div {
+    justify-content: center;
+    }
+    #projetos h4{
+
+      text-align: center;
+    }
+    #projetos h5{
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #identidades div img{
+      width: 60vw;
+    }
+    #vetorizacoes div img{
+      width: 80vw;
+    }
+    #identidades div , #vetorizacoes div {
+      row-gap: 2em;
+    }
+    #social-media p{
+      margin-top: 2em;
+    }
+    #social-media div>div{
+      justify-content: center;
+    }
+    #social-media img{
+      width: 90vw;
+    }
+    footer .margem{
+      flex-wrap: wrap-reverse;
+      row-gap: 2em;
+    }
+    #sobre ul li a, #sobre p {
+        font-size: 1rem;
+    }
+    #sobre>section {
+      row-gap: 2em;
+    }
+    }
+    
+  </style>
+</head>
+
+<body>
+  <a href="javascript:fechar()"><div id="esmaecer"></div></a>
+  <header>
+    <section class="margem">
+      <nav>
+        <div> <a href="index.html">
+            <p><b>Portfólio</b></p>
+            <p>Iraikare Rodrigues</p>
+          </a></div>
+          <div>
+            <figure id="menusand">
+              <a href="javascript:abrir()"><img src="imagens/sand.png" width="45em"></a>
+          </figure>
+          <ol id="menu">
+              <li><a href="#sobre">Sobre mim</a></li>
+              <li><a href="#projetos">Projetos</a></li>
+              <li><a href="#identidades">Identidades Visuais</a></li>
+              <li><a href="#vetorizacoes">Vetorizações</a></li>
+              <li><a href="#social-media">Social media</a></li>
+          </ol>
+          </div>
+        <ol id="menudesk">
+          <li><a href="#sobre">Sobre mim</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#identidades">Identidades Visuais</a></li>
+          <li><a href="#vetorizacoes">Vetorizações</a></li>
+          <li><a href="#social-media">Social media</a></li>
+        </ol>
+      </nav>
+      <section>
+        <div style="position: relative">
+          <h2 id="ano">2025</h2>
+          <h1><img src="imagens/portfolio-nome.svg" alt="portfólio"></h1>
+        </div>
+        <figure>
+          <img src="imagens/img-header.svg" alt="foto iraikare">
+        </figure>
+      </section>
+    </section>
+  </header>
+  <main>
+    <section class="margem" id="sobre">
+      <section>
+        <figure>
+          <img src="imagens/img-sobre.png" alt="fotos de iraikare">
+        </figure>
+        <div>
+          <div>
+            <img src="imagens/image 4.svg" alt="gatinho fofo">
+            <h3>Iraikare Rodrigues</h3>
+          </div>
+          <p>Olá! Tenho 19 anos, sou Técnica em Informática para Internet pelo IFRN e Graduanda de Bacharelado em Tecnologia da Informação pela UFRN. Tenho experiência nas áreas de design e desenvolvimento web full-stack. Para mais informações <a>clique aqui para conferir meu currículo!</a></p>
+          <ul>
+            <li><a href="https://www.instagram.com/iraikare/"><img src="imagens/redes/insta.svg"> @iraikare</a></li>
+            <li><a href="https://www.linkedin.com/in/iraikare"><img src="imagens/redes/linkedin.svg"> @Iraikare</a></li>
+            <li><a href="https://www.github.com/iraikare/"><img src="imagens/redes/github.svg"> @iraikare</a></li>
+          </ul>
+        </div>
+      </section>
+      <div id="tecnologias">
+        <img src="imagens/tecnologias/figma.png" alt="figma" />
+        <img src="imagens/tecnologias/html.png" alt="html" />
+        <img src="imagens/tecnologias/css.png" alt="css" />
+         <img src="imagens/tecnologias/tailwind.png" alt="Tailwind" />
+        <img src="imagens/tecnologias/js.png" alt="javascript" />
+        <img src="imagens/tecnologias/wp.png" alt="wordpress" />
+        <img src="imagens/tecnologias/react.png" alt="react" />
+        <img src="imagens/tecnologias/ts.png" alt="typescript" />
+        <img src="imagens/tecnologias/c-sharp.png" alt="c#" />
+        <img src="imagens/tecnologias/aspnet.png" alt="AspNet" />
+        <img src="imagens/tecnologias/prisma.png" alt="Prisma" />
+      </div>
+    </section>
+    <section id="projetos">
+      <section class="margem">
+        <h3>Projetos</h3>
+        <section>
+          <div>
+            <div>
+              <h4>Site do ProFuturo - Projeto de Transformação e Crescimento Sustentável para o Campo.</h4>
+              <h5>Em andamento</h5>
+              <div><a href="https://profuturo.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+            </div>
+            <figure class="mockup"> <img src="imagens/sites/profuturo.png" alt="imagem do site do ProFuturo" /></figure>
+          </div>
+
+          <div>
+            <div>
+              <h4>Site da EXPOTEC CNAT 2024</h4>
+              <h5>Finalizado em 2025</h5>
+              <div><a href="https://expotec.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+            </div>
+            <figure class="mockup"> <img src="imagens/sites/expotec.png" alt="imagem do site da EXPOTEC 2024" /></figure>
+          </div>
+
+          <div>
+            <div>
+              <h4>Site do Centro de Soluções Aplicadas (CSA)</h4>
+              <h5>Finalizado em 2023</h5>
+              <div><a href="https://csa.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+            </div>
+            <figure class="mockup"> <img src="imagens/sites/csa.png" alt="imagem do site do CSA" /></figure>
+          </div>
+
+          <div>
+            <div>
+              <h4>Site da Diretoria Acadêmica de Indústria (DIACIN)</h4>
+              <h5>Finalizado em 2024</h5>
+              <div><a href="https://diacin.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+            </div>
+            <figure class="mockup"> <img src="imagens/sites/diacin.png" alt="imagem do site da DIACIN" /></figure>
+          </div>
+
+          <div>
+            <div>
+              <h4>Site da Diretoria Acadêmica de Gestão e Tecnologia da Informação (DIATINF)</h4>
+              <h5>Finalizado em 2023</h5>
+              <div><a href="https://diatinf.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+            </div>
+            <figure class="mockup"> <img  src="imagens/sites/diatinf.png" alt="imagem do site da DIATINF" /></figure>
+          </div>
+
+          <div>
+            <div>
+              <h4>Site do Encontro Anual do Iecom em Comunicações, Redes e Criptografia (ENCOM)</h4>
+              <h5>Finalizado em 2024</h5>
+              <div><a href="https://encom.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+            </div>
+            <figure class="mockup"> <img  src="imagens/sites/encom.png" alt="imagem do site do ENCOM" /></figure>
+          </div>
+
+          <div>
+            <div>
+              <h4>Site da Diretoria de Extensão (DIREX)</h4>
+              <h5>Finalizado em 2023</h5>
+              <div><a href="https://direx.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+            </div>
+            <figure class="mockup"> <img  src="imagens/sites/direx.png" alt="imagem do site da Direx" /></figure>
+          </div>
+
+          <div>
+            <div>
+              <h4>Site do 19º Workshop de Tecnologia em Análise em Desenvolvimento de Sistemas e Informática para Internet (WTADS/ WINFO)</h4>
+              <h5>Finalizado em 2025</h5>
+              <div><a href="https://wtads.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+            </div>
+            <figure class="mockup"> <img  src="imagens/sites/wtads.png" alt="imagem do site do Wtads" /></figure>
+          </div>
+
+          <div id="bemtevista">
+            <div>
+              <h4>Site da rede social dedicada a moda: Bem te vista</h4>
+              <h5>Projeto Acadêmico</h5>
+              <div><a href="https://github.com/infoweb-projetos/Bem-te-vista"><input type="button" value="Acessar Github!"></a><figure><img src="imagens/tecnologias/react.png" /> <img src="imagens/tecnologias/node.png" /></figure></div>
+            </div>
+            <figure class="mockup"> <img  src="imagens/sites/bem-te-vista.png" alt="imagem do site do bem te vista" /></figure>
+          </div>
+
+          <div id="soularte">
+            <div>
+              <h4>Site do e-commerce de artesanato: Soul arte</h4>
+              <h5>Projeto Acadêmico</h5>
+              <div><a href="https://github.com/PI-InfoWeb-CNAT/2023-Soul_Arte"><input type="button" value="Acessar Github!"></a><figure ><img  src="imagens/tecnologias/aspnet.png" /></figure></div>
+            </div>
+            <figure class="mockup"> <img  src="imagens/sites/soul-arte.png" alt="imagem do site do soul arte" /></figure>
+          </div>
+          
+        </section>
+      </section>
+    </section>
+    <section id="identidades">
+      <section class="margem">
+        <h3>Identidades Visuais</h3>
+        <div>
+          <figure><img src="imagens/identidades/GeoForm - Fundo Branco.svg" alt="Logo do projeto GeoForm" /></figure>
+          <figure><img src="imagens/identidades/bem-te-vista.svg" alt="Logo do projeto Bem te Vista" /></figure>
+          <figure><img src="imagens/identidades/eco-patio.svg" alt="Logo do projeto Eco Patio" /></figure>
+          <figure><img src="imagens/identidades/jogos-internos.svg" alt="Logo dos jogos internos do IFRN 2024" /></figure>
+        </div>
+      </section>
+    </section>
+    <section id="vetorizacoes">
+      <section class="margem">
+        <h3>Vetorizações</h3>
+        <div>
+          <figure><img src="imagens/vetores/S2natal.svg" alt="vetorização de aspectos da cidade Natal/RN" /></figure>
+          <figure><img src="imagens/vetores/arenamidway.svg" alt="vetorização da Casa de Apostas Arena das Dunas e do Shopping Miwway Mall" /></figure>
+          <figure><img src="imagens/vetores/ifrnvetor.svg" alt="vetorização da frente IFRN campus Natl - Central" /></figure>
+        </div>
+      </section>
+    </section>
+    <section id="social-media">
+      <section class="margem">
+        <div>
+          <p>Confira alguns designs feitos <br> por mim enquanto</p>
+          <h3>Social Media</h3>
+          <div>
+            <a href="https://www.instagram.com/diatinf/"><input type="button" value="@diatinf"></a>
+            <a href="https://www.instagram.com/csaifrn/"><input type="button" value="@csaifrn"></a>
+            <a href="https://www.instagram.com/encom2024/"><input type="button" value="@encom2024"></a>
+          </div>
+        </div>
+        <figure><img src="imagens/img-socialm.svg" alt="foto representativa dos post do instagram" /></figure>
+      </section>
+    </section>
+  </main>
+  <footer>
+    <section class="margem">
+      <div> <a href="index.html">
+          <p><b>Portfólio</b></p>
+          <p>Iraikare Rodrigues</p>
+          <p id="copyright">© Desenvolvido por Iraikare Rodrigues</p>
+        </a></div>
+      <ul>
+        <li><a href="https://www.instagram.com/iraikare/"><img src="imagens/redes/insta.svg"></a></li>
+        <li><a href="https://www.linkedin.com/in/iraikare"><img src="imagens/redes/linkedin.svg"></a></li>
+        <li><a href="https://www.instagram.com/iraikare/"><img src="imagens/redes/github.svg"></a></li>
+      </ul>
+    </section>
+  </footer>
+</body>
+</html>
