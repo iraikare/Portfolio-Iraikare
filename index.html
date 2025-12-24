@@ -5,22 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>Portfólio - Iraikare Rodrigues</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Caveat:wght@400..700&family=Nova+Square&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
   <script>
     function abrir(){
-    document.getElementById('esmaecer').style.visibility = 'visible';
-    document.getElementById('menu').style.visibility = 'visible';
-    document.getElementById('x').style.visibility = 'visible';
-    document.getElementById('sanduiche').style.visibility = 'hidden';
-}
-function fechar(){
-    document.getElementById('esmaecer').style.visibility = 'hidden';
-    document.getElementById('menu').style.visibility = 'hidden';
-    document.getElementById('x').style.visibility = 'hidden';
-    document.getElementById('sanduiche').style.visibility = 'visible';
-}
+      document.getElementById('esmaecer').style.visibility = 'visible';
+      document.getElementById('menu').style.visibility = 'visible';
+      document.getElementById('x').style.visibility = 'visible';
+      document.getElementById('sanduiche').style.visibility = 'hidden';
+    }
+    function fechar(){
+      document.getElementById('esmaecer').style.visibility = 'hidden';
+      document.getElementById('menu').style.visibility = 'hidden';
+      document.getElementById('x').style.visibility = 'hidden';
+      document.getElementById('sanduiche').style.visibility = 'visible';
+    }
   </script>
   <style>
     * {
@@ -32,6 +36,7 @@ function fechar(){
     body {
       background-color: #F2EAD0;
     }
+
     div#esmaecer{
         background-color: rgba(0, 0, 0, 0.5);
         width: 100%;
@@ -42,6 +47,7 @@ function fechar(){
         z-index: 2;
         visibility: hidden;
     }
+
     header #menu{
         position: fixed;
         visibility: hidden;
@@ -55,17 +61,17 @@ function fechar(){
         z-index: 2;
         display: block;
     }
+
     #menusand{
       visibility: hidden;
       position: absolute;
-    right: 2em;
-    width: 50px;
-    top: 2em;
+      right: 2em;
+      width: 50px;
+      top: 2em;
     }
     #menu li{
       padding: 0.5em 0;
     }
-    
 
     .margem {
       margin: 0 auto;
@@ -118,10 +124,19 @@ function fechar(){
       color: black;
     }
 
-    header section section,#social-media .margem, footer .margem {
+    #experiencia .margem, footer .margem, #habilidades .margem {
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+    
+    #habilidades .margem {
+        align-items: flex-start;
+    }
+
+    header section section{
+      display: flex;
+      justify-content: center;
     }
     header figure{
       width: 40%;
@@ -164,7 +179,7 @@ function fechar(){
     #sobre p {
       font-family: "Lato", sans-serif;
       font-weight: 300;
-      font-size: 1.25em;
+      font-size: 1em;
       text-align: right;
       padding: 1em;
       width: fit-content;
@@ -177,7 +192,7 @@ function fechar(){
       font-family: "Caveat", cursive;
       font-optical-sizing: auto;
       font-weight: 500;
-      font-size: 4em;
+      font-size: 3em;
     }
 
     #sobre div div {
@@ -205,48 +220,103 @@ function fechar(){
     #sobre figure img{
       width: 100%;
     }
-    #tecnologias {
-    flex-wrap: wrap;
-    margin-top: 3em;
-    display: flex
-;
-    justify-content: center;
-    width: 100%;
-    gap: 2em;
-    }
 
-    #tecnologias img {
-      max-height: 50px;
-      object-fit: cover;
-    }
-
-    #projetos, #vetorizacoes, #identidades {
+    #projetos, #vetorizacoes, #identidades, #experiencia, #habilidades {
       padding: 2.5em 0 3.5em 0;
     }
-    #projetos, #social-media{
+    #projetos, #identidades, #vetorizacoes {
       background-color: #FFF9E8;
     }
 
+    #experiencia {
+        margin-top: 0; 
+        padding-top: 6em; 
+        background-image: url(imagens/vector-sm.svg);
+        background-repeat: no-repeat;
+        background-position: top 0 left 0;
+        background-color: transparent;
+    }
+    
     #projetos {
       background-image: url(imagens/bg-tec.svg);
       background-repeat: no-repeat;
       background-position: top 0 right 0;
-      margin-top: 3.75em;
-    }
-    #projetos .margem{
-      padding-top:  3.75em ;
     }
 
-    #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3, #social-media h3 {
-      font-size: 2.5em;
+    #projetos .margem{
+      padding-top: 3.75em;
+    }
+    
+    #experiencia .margem {
+      display: block;
+    }
+
+    #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3, #experiencia h3, #habilidades h3 {
+      font-size: 1.5em;
       color: #23400E;
       font-weight: 400;
       width: fit-content;
       border-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTY0IiBoZWlnaHQ9IjE1OCIgdmlld0JveD0iMCAwIDU2NCAxNTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01IDE1M1Y1SDU1OVYxNTNINVoiIHN0cm9rZT0iIzIzNDAwRSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz4KPGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjUiIGZpbGw9IiMyMzQwMEUiLz4KPGNpcmNsZSBjeD0iNTU5IiBjeT0iNSIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8Y2lyY2xlIGN4PSI1IiBjeT0iMTUzIiByPSI1IiBmaWxsPSIjMjM0MDBFIi8+CjxjaXJjbGUgY3g9IjU1OSIgY3k9IjE1MyIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8L3N2Zz4K") 13 / 13px / 13px repeat;
       border-style: solid;
+      margin: 0 auto 2em auto;
+      text-align: center;
     }
 
-    #projetos input, #social-media input {
+    #projetos h3.titulo-projetos {
+        font-family: "Michroma", sans-serif;
+        font-size: 1.2em; 
+        font-weight: 600;
+        color: #23400E;
+        margin-top: 3em;
+        margin-bottom: 0.5em;
+        border: none; 
+        text-align: left; 
+        width: 100%;
+        padding-bottom: 0.5em;
+    }
+    
+    .disclaimer {
+        text-align: left;
+        font-family: "Lato", sans-serif;
+        font-size: 1em;
+        font-weight: 400;
+        color: #555;
+        margin-bottom: 3em;
+        max-width: 100%;
+    }
+
+    /* Botão estático (Sem hover, mas visualmente igual) */
+    .btn-static {
+        color: white;
+        background-color: #BF395D;
+        border-radius: 5px;
+        padding: 5px 10px;
+        border: none;
+        font-size: 0.85em;
+        margin-right: 5px;
+        cursor: default;
+        font-family: "Michroma", sans-serif;
+        display: inline-block;
+    }
+
+    /* PLACEHOLDER COM MESMAS PROPRIEDADES VISUAIS DO MOCKUP */
+    .placeholder-media {
+        width: 40%; /* Padrão Desktop */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .placeholder-media img, .placeholder-media video {
+        width: 100%;
+        height: auto; /* Altura automática para não distorcer */
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    #projetos input, #experiencia input {
       color: white;
       background-color: #BF395D;
       border-radius: 5px;
@@ -257,7 +327,7 @@ function fechar(){
       cursor: pointer;
     }
 
-    #projetos input:hover, #social-media input:hover {
+    #projetos input:hover, #experiencia input:hover {
       background-color: #23400E;
     }
 
@@ -265,11 +335,16 @@ function fechar(){
       display: flex;
     }
 
-    #projetos div>div>div img {
-    width: 30%;
-    height: auto;
-    object-fit: contain;
+    #projetos div>div>div figure {
+      display: flex;
+      gap: 10px;
+      align-items: center;
     }
+    
+    #projetos div>div>div figure i {
+      font-size: 1.5em; 
+    }
+
     #projetos>div {
       display: flex;
     }
@@ -279,56 +354,33 @@ function fechar(){
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      row-gap: 2em;
+      row-gap: 4em;
     }
 
     h4 {
-      font-size: 0.8em;
-      font-weight: 300;
+      font-size: 0.9em;
+      font-weight: 700;
+      color: #23400E;
+      margin-bottom: 0.5em;
     }
     #projetos h4{
         width: 20em;
-      }
+    }
 
     h5 {
       margin: 2em 1em;
-      font-size: 0.8em;
+      font-size: 0.7em;
       color: #23400E;
       font-weight: 400;
       width: fit-content;
+      font-family: "Michroma", sans-serif; 
+      
       border-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTY0IiBoZWlnaHQ9IjE1OCIgdmlld0JveD0iMCAwIDU2NCAxNTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01IDE1M1Y1SDU1OVYxNTNINVoiIHN0cm9rZT0iIzIzNDAwRSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz4KPGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjUiIGZpbGw9IiMyMzQwMEUiLz4KPGNpcmNsZSBjeD0iNTU5IiBjeT0iNSIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8Y2lyY2xlIGN4PSI1IiBjeT0iMTUzIiByPSI1IiBmaWxsPSIjMjM0MDBFIi8+CjxjaXJjbGUgY3g9IjU1OSIgY3k9IjE1MyIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8L3N2Zz4K") 13 / 13px / 13px repeat;
       border-style: solid;
     }
 
-    #social-media .margem {
-      padding: 3.75em 2em;
-    }
-
-    #social-media p, #social-media input {
-      font-size: 1.5em;
-      font-weight: 400;
-    }
-
-    #social-media h3 {
-      margin: 1em 0;
-    }
-
-    #social-media input {
+    #experiencia input {
       padding: 10px 20px;
-    }
-
-    #social-media {
-      background-image: url(imagens/vector-sm.svg);
-      background-repeat: no-repeat;
-      background-position: top 0 left 0;
-    }
-
-    #social-media div>div {
-      display: flex;
-      max-width: 90%;
-      flex-wrap: wrap;
-      column-gap: 1em;
-      row-gap: 1em;
     }
 
     #vetorizacoes div, #identidades div {
@@ -352,7 +404,7 @@ function fechar(){
       padding-bottom: 7em;
       background-color: #FFF9E8;
     }
-    #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3{
+    #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3, #experiencia h3, #habilidades h3{
       margin: 0 auto;
       text-align: center;
     }
@@ -363,39 +415,143 @@ function fechar(){
       max-width: 48%;
       display: flex;
       justify-content: space-between;
-      align-items: top;
+      align-items: center; /* ALINHAMENTO CORRIGIDO */
     }
-    #projetos div>div>div img {
-    width: 1.5em;
-    height: 1.5em;
-    object-fit: contain;
-}
-#projetos #bemtevista>div>div img{
-  width: 2.5em;
-    height: 2em;
-    object-fit: contain;
-}
 
-#projetos #soularte>div>div img{
-  width: 4em;
-    height: 2em;
-    object-fit: contain;
-}
-#sobre p a{
-  color: #23400E;
-  font-weight: 500;
-  font-family: "Lato", sans-serif;
-  font-size: 1em;
-  text-decoration: underline;
+    #sobre p a{
+      color: #23400E;
+      font-weight: 500;
+      font-family: "Lato", sans-serif;
+      font-size: 1em;
+      text-decoration: underline;
 
-}
-#sobre>section>div{
-  width: 50%;
-}
-#sobre>section>figure{
-  width: 45%;
-}
+    }
+    #sobre>section>div{
+      width: 50%;
+    }
+    #sobre>section>figure{
+      width: 45%;
+    }
 
+    .exp-item {
+        margin-bottom: 3em;
+        border-left: 3px solid #23400E;
+        padding-left: 1.5em;
+    }
+
+    .exp-item h4 {
+        font-family: "Michroma", sans-serif;
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #23400E;
+        width: auto;
+        text-align: left;
+    }
+
+    .exp-item h5 {
+        font-family: "Lato", sans-serif;
+        font-size: 1em;
+        font-style: italic;
+        font-weight: 400;
+        color: #555;
+        margin: 0.5em 0;
+        border: none;
+        width: auto;
+    }
+
+    .exp-item p {
+        font-family: "Lato", sans-serif;
+        font-size: 1em;
+        color: #23400E;
+        line-height: 1.5;
+    }
+
+    .mt {
+      margin-top: 2em;
+    }
+   .skills-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        width: 100%;
+        margin-top: 2em;
+    }
+
+    .skills-row {
+        display: flex;
+        justify-content: center; 
+        gap: 4em;
+        flex-wrap: wrap; 
+        width: 100%;
+        margin-bottom: 1.5em;
+    }
+
+    .tech-category {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tech-category h4 {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        color: #23400E;
+        margin-bottom: 1em;
+        font-size: 1.1em;
+        text-align: center;
+        white-space: nowrap; 
+    }
+
+    .tech-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        justify-content: center;
+    }
+
+    .tech-tag {
+        background-color: #FFF9E8;
+        border: 1px solid #23400E;
+        border-radius: 50px;
+        padding: 0.5em 1.2em;
+        display: flex;
+        align-items: center;
+        gap: 0.8em;
+        font-family: "Lato", sans-serif;
+        font-size: 0.9em;
+        color: #23400E;
+        font-weight: 500;
+        transition: transform 0.2s;
+        cursor: default;
+    }
+    
+    .tech-tag:hover {
+        transform: scale(1.05);
+        background-color: #23400E;
+        color: #FFF9E8;
+    }
+    
+    .tech-tag i {
+        font-size: 1.5em; 
+    }
+    
+    #identidades div figure img {
+      width: 200px;
+    }
+    .p-projeto{
+      font-family: "Lato", sans-serif;
+      font-size: 1em;
+      width: 20em;
+      line-height: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    @media screen and (max-width: 770px){
+        .skills-row {
+            gap: 2em;
+            flex-direction: column;
+        }
+    }
     @media screen and (max-width: 1024px){
       
       header>section>section{
@@ -418,7 +574,7 @@ function fechar(){
         row-gap: 1em;
       }
       #sobre h3{
-        font-size: 3em;
+        font-size: 2em;
       }
       #vetorizacoes div, #identidades div{
         justify-content: space-evenly;
@@ -429,48 +585,56 @@ function fechar(){
       #vetorizacoes div img{
         width: 25vw;
       }
-      #social-media h3{
+      #experiencia h3, #habilidades h3{
         margin: 1em auto;
       }
-      #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3, #social-media h3{
-        font-size: 1.6em;
+      #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3, #experiencia h3{
+        font-size: 1.5em;
       }
-      #social-media .margem{
+      
+      #projetos h3.titulo-projetos {
+        text-align: center;
+      }
+
+      #experiencia .margem{
         flex-wrap: wrap;
         justify-content: center;
         row-gap: 3em;
       }
-      #social-media div>div{
+      #experiencia div>div{
         max-width: 100%;
       }
-      #social-media p{
-        padding-top: 3em;
+      #experiencia p{
+        padding-top: 1em;
         width: fit-content;
-        text-align: center;
-        margin: 0 auto;
+        text-align: left;
+        margin: 0;
       }
-      #projetos h4, #projetos h5, #projetos input{
+      #projetos h4, #projetos input{
         font-size: 1em;
       }
     
       #projetos .margem>section>div{
-      max-width: 100%;
-      justify-content: center;
+        max-width: 100%;
+        justify-content: center;
       }
       #projetos div>div>div img {
-      height: 60%;
+        height: 60%;
       }
-      #projetos .mockup{
+      
+      /* IGUALA A LARGURA DAS IMAGENS/MOCKUPS EM TABLET PARA 40% */
+      #projetos .mockup, #projetos .placeholder-media {
         width: 40%;
       }
+
       #projetos .margem>section{
         justify-content: center;
       }
       #sobre ul li a, #sobre p{
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
       h2#ano{
-        font-size: 1.8em;
+        font-size: 1.5em;
         left: 75%;
         top: 13%;
       }
@@ -489,21 +653,15 @@ function fechar(){
       #sobre>section>figure {
         display: none;
       }
-      #tecnologias{
-        gap:1em;
-      }
-      #tecnologias img{
-        height: 40px;
-      }
-      #social-media p, #social-media input {
-        font-size: 1.2em;
+      #experiencia p, #experiencia input {
+        font-size: 1em;
       }
       #menusand{
-      visibility: visible;
-    }
-    #menudesk{
-      display: none;
-    }
+        visibility: visible;
+      }
+      #menudesk{
+        display: none;
+      }
 
     }
     @media screen and (max-width: 770px){
@@ -523,71 +681,71 @@ function fechar(){
       }
       #sobre h3{
         line-height: 0.7em;
-        margin-bottom: 0.2em;
+        margin-bottom: 0.5em;
       }
       #sobre>section>div>div>img {
         width: 30%;
-    }
-    #tecnologias img {
-        height: 30px;
-    }
-    #projetos .margem>section>div {
+      }
+      #projetos .margem>section>div {
         max-width: 100%;
         justify-content: center;
         flex-wrap: wrap-reverse;
-    }
-    #projetos .mockup {
+      }
+      
+      #projetos .mockup, #projetos .placeholder-media {
         width: 100%;
         margin-bottom: 1em;
-    }
-    #projetos .margem>section>div>div{
-      max-width: 98%;
-    }
-    #projetos div>div>div {
-    justify-content: center;
-    }
-    #projetos h4{
+      }
 
-      text-align: center;
+      #projetos .margem>section>div>div{
+        max-width: 98%;
+      }
+      #projetos div>div>div {
+        justify-content: center;
+      }
+      #projetos h4{
+        text-align: center;
+      }
+      #projetos h5{
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #identidades div img{
+        width: 60vw;
+      }
+      #vetorizacoes div img{
+        width: 80vw;
+      }
+      #identidades div , #vetorizacoes div {
+        row-gap: 2em;
+      }
+      #projetos h3{
+        margin-top: 2em;
+      }
+      #experiencia div>div{
+        justify-content: center;
+      }
+      #experiencia img{
+        width: 90vw;
+      }
+      footer .margem{
+        flex-wrap: wrap-reverse;
+        row-gap: 2em;
+      }
+      #sobre ul li a, #sobre p {
+          font-size: 1rem;
+      }
+      #sobre>section {
+        row-gap: 2em;
+      }
+      footer .margem{
+        justify-content: center;
+        text-align: center;
+      }
+      .p-projeto{
+        text-align: center;
+      }
     }
-    #projetos h5{
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #identidades div img{
-      width: 60vw;
-    }
-    #vetorizacoes div img{
-      width: 80vw;
-    }
-    #identidades div , #vetorizacoes div {
-      row-gap: 2em;
-    }
-    #social-media p, #projetos h3{
-      margin-top: 2em;
-    }
-    #social-media div>div{
-      justify-content: center;
-    }
-    #social-media img{
-      width: 90vw;
-    }
-    footer .margem{
-      flex-wrap: wrap-reverse;
-      row-gap: 2em;
-    }
-    #sobre ul li a, #sobre p {
-        font-size: 1rem;
-    }
-    #sobre>section {
-      row-gap: 2em;
-    }
-    footer .margem{
-      justify-content: center;
-      text-align: center;
-    }
-    }
-    
   </style>
 </head>
 
@@ -606,28 +764,27 @@ function fechar(){
           </figure>
           <ol id="menu">
               <li><a href="#sobre">Sobre mim</a></li>
+              <li><a href="#habilidades">Habilidades</a></li>
               <li><a href="#projetos">Projetos</a></li>
+              <li><a href="#experiencia">Experiência</a></li>
               <li><a href="#identidades">Identidades Visuais</a></li>
               <li><a href="#vetorizacoes">Vetorizações</a></li>
-              <li><a href="#social-media">Social media</a></li>
           </ol>
           </div>
         <ol id="menudesk">
           <li><a href="#sobre">Sobre mim</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
           <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
           <li><a href="#identidades">Identidades Visuais</a></li>
           <li><a href="#vetorizacoes">Vetorizações</a></li>
-          <li><a href="#social-media">Social media</a></li>
         </ol>
       </nav>
       <section>
-        <div style="position: relative">
+        <div style="position: relative;">
           <h2 id="ano">2025</h2>
           <h1><img src="imagens/portfolio-nome.svg" alt="portfólio"></h1>
         </div>
-        <figure>
-          <img src="imagens/img-header.svg" alt="foto iraikare">
-        </figure>
       </section>
     </section>
   </header>
@@ -639,7 +796,6 @@ function fechar(){
         </figure>
         <div>
           <div>
-            <img src="imagens/image 4.svg" alt="gatinho fofo">
             <h3>Iraikare Rodrigues</h3>
           </div>
           <p>Olá! Tenho 19 anos, sou Técnica em Informática para Internet pelo IFRN e Graduanda de Bacharelado em Tecnologia da Informação pela UFRN. Tenho experiência nas áreas de design e desenvolvimento web full-stack. Para mais informações <a href="https://drive.google.com/file/d/1yqxH-iWVZsigObxq7XqdEyL8r8AM7NJq/view?usp=sharing">clique aqui para conferir meu currículo!</a></p>
@@ -650,29 +806,162 @@ function fechar(){
           </ul>
         </div>
       </section>
-      <div id="tecnologias">
-        <img src="imagens/tecnologias/figma.png" alt="figma" />
-        <img src="imagens/tecnologias/html.png" alt="html" />
-        <img src="imagens/tecnologias/css.png" alt="css" />
-         <img src="imagens/tecnologias/tailwind.png" alt="Tailwind" />
-        <img src="imagens/tecnologias/js.png" alt="javascript" />
-        <img src="imagens/tecnologias/wp.png" alt="wordpress" />
-        <img src="imagens/tecnologias/react.png" alt="react" />
-        <img src="imagens/tecnologias/ts.png" alt="typescript" />
-        <img src="imagens/tecnologias/c-sharp.png" alt="c#" />
-        <img src="imagens/tecnologias/aspnet.png" alt="AspNet" />
-        <img src="imagens/tecnologias/prisma.png" alt="Prisma" />
-      </div>
+    </section>
+    <section id="habilidades">
+        <div class="margem" style="display: block;">
+            <h3>Habilidades & Tecnologias</h3>
+            
+            <div class="skills-container">
+                
+                <div class="skills-row">
+                    <div class="tech-category">
+                        <h4>Linguagens</h4>
+                        <div class="tech-grid">
+                            <div class="tech-tag"><i class="devicon-csharp-plain colored"></i> C#</div>
+                            <div class="tech-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                            <div class="tech-tag"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+                            <div class="tech-tag"><i class="devicon-html5-plain colored"></i> HTML5</div>
+                            <div class="tech-tag"><i class="devicon-css3-plain colored"></i> CSS3</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-row">
+                    <div class="tech-category">
+                        <h4>Frameworks e Bibliotecas (Backend)</h4>
+                        <div class="tech-grid">
+                            <div class="tech-tag"><i class="devicon-dot-net-plain-wordmark colored"></i> ASP.NET</div>
+                            <div class="tech-tag"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+                        </div>
+                    </div>
+
+                    <div class="tech-category">
+                        <h4>Frameworks e Bibliotecas (Frontend)</h4>
+                        <div class="tech-grid">
+                            <div class="tech-tag"><i class="devicon-react-original colored"></i> React</div>
+                            <div class="tech-tag"><i class="devicon-vuejs-plain colored"></i> Vue.js</div>
+                            <div class="tech-tag"><i class="devicon-tailwindcss-original colored"></i> Tailwind CSS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-row">
+                    <div class="tech-category">
+                        <h4>Bancos de Dados</h4>
+                        <div class="tech-grid">
+                            <div class="tech-tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+                            <div class="tech-tag"><i class="devicon-oracle-original colored"></i> Oracle</div>
+                        </div>
+                    </div>
+
+                    <div class="tech-category">
+                        <h4>Plataformas (CMS)</h4>
+                        <div class="tech-grid">
+                            <div class="tech-tag"><i class="devicon-wordpress-plain colored"></i> WordPress</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
     <section id="projetos">
       <section class="margem">
         <h3>Projetos</h3>
+
+        <h3 class="titulo-projetos">Sistemas Corporativos (Experiência Profissional)</h3>
+        <p class="disclaimer">
+            Os sistemas abaixo são projetos reais desenvolvidos profissionalmente para a Equatorial Energia (7 estados). Por razões de confidencialidade e segurança, o acesso é restrito e os dados sensíveis foram ocultados. Em todos estes projetos atuei como desenvolvedora Full Stack utilizando <b>Vue.js</b> e <b>.NET</b>.
+        </p>
+
+        <section>
+             <div>
+                <div>
+                  <h4>SISCO - Sistema de gerenciamento de Obras</h4>
+                  <h5>Em Produção</h5>
+                  <p class="p-projeto">Gerenciamento de levantamentos, anteprojetos, projetos e obras.</p>
+                  <div>
+                      <div class="btn-static">Sistema Interno</div>
+                      <figure>
+                          <i class="devicon-vuejs-plain colored"></i>
+                          <i class="devicon-dot-net-plain-wordmark colored"></i>
+                      </figure>
+                  </div>
+                </div>
+                <div class="placeholder-media">
+                   <img src="imagens/sites/sisco.png" alt="Print do sistema SISCO" />
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <h4>SFM - Sistema de Fiscalização Mobile</h4>
+                  <h5>Em Produção</h5>
+                  <p class="p-projeto">Gerenciamento do processo de fiscalização de obras em campo.</p>
+                  <div>
+                      <div class="btn-static">Sistema Interno</div>
+                      <figure>
+                          <i class="devicon-vuejs-plain colored"></i>
+                          <i class="devicon-dot-net-plain-wordmark colored"></i>
+                      </figure>
+                  </div>
+                </div>
+                <div class="placeholder-media">
+                   <img src="imagens/sites/sfm.png" alt="Print do sistema SFM" />
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <h4>Oasis - Ajuste de Equipamentos</h4>
+                  <h5>Em Produção</h5>
+                  <p class="p-projeto">Sistema de gerenciamento de ajustes de equipamentos de alimentadores.</p>
+                  <div>
+                      <div class="btn-static">Sistema Interno</div>
+                      <figure>
+                          <i class="devicon-vuejs-plain colored"></i>
+                          <i class="devicon-dot-net-plain-wordmark colored"></i>
+                      </figure>
+                  </div>
+                </div>
+                <div class="placeholder-media">
+                   <img src="imagens/sites/oasis.png" alt="Print do sistema Oasis" />
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <h4>Nova Ligação - Gestão de Clientes</h4>
+                  <h5>Em Produção</h5>
+                  <p class="p-projeto">Gerenciamento de novas ligações com novos clientes e parceiros.</p>
+                  <div>
+                      <div class="btn-static">Sistema Interno</div>
+                      <figure>
+                          <i class="devicon-vuejs-plain colored"></i>
+                          <i class="devicon-dot-net-plain-wordmark colored"></i>
+                      </figure>
+                  </div>
+                </div>
+                <div class="placeholder-media">
+                   <img src="imagens/sites/novaligacao.png" alt="Print do sistema Nova Ligação" />
+                </div>
+              </div>
+        </section>
+
+        <h3 class="titulo-projetos">Websites & Sistemas Acadêmicos</h3>
+        
         <section>
           <div>
             <div>
               <h4>Site do ProFuturo - Projeto de Transformação e Crescimento Sustentável para o Campo.</h4>
-              <h5>Em andamento</h5>
-              <div><a href="https://profuturo.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+              <h5>Projeto de 2025</h5>
+              <div>
+                  <a href="https://profuturo.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
+                  <figure>
+                      <i class="devicon-figma-plain colored"></i> 
+                      <i class="devicon-wordpress-plain colored"></i>
+                  </figure>
+              </div>
             </div>
             <figure class="mockup"> <img src="imagens/sites/profuturo.png" alt="imagem do site do ProFuturo" /></figure>
           </div>
@@ -681,7 +970,13 @@ function fechar(){
             <div>
               <h4>Site da EXPOTEC CNAT 2024</h4>
               <h5>Finalizado em 2025</h5>
-              <div><a href="https://expotec.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+              <div>
+                  <a href="https://expotec.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
+                  <figure>
+                      <i class="devicon-figma-plain colored"></i> 
+                      <i class="devicon-wordpress-plain colored"></i>
+                  </figure>
+              </div>
             </div>
             <figure class="mockup"> <img src="imagens/sites/expotec.png" alt="imagem do site da EXPOTEC 2024" /></figure>
           </div>
@@ -690,7 +985,13 @@ function fechar(){
             <div>
               <h4>Site do Centro de Soluções Aplicadas (CSA)</h4>
               <h5>Finalizado em 2023</h5>
-              <div><a href="https://csa.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+              <div>
+                  <a href="https://csa.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
+                  <figure>
+                      <i class="devicon-figma-plain colored"></i> 
+                      <i class="devicon-wordpress-plain colored"></i>
+                  </figure>
+              </div>
             </div>
             <figure class="mockup"> <img src="imagens/sites/csa.png" alt="imagem do site do CSA" /></figure>
           </div>
@@ -699,7 +1000,13 @@ function fechar(){
             <div>
               <h4>Site da Diretoria Acadêmica de Indústria (DIACIN)</h4>
               <h5>Finalizado em 2024</h5>
-              <div><a href="https://diacin.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+              <div>
+                  <a href="https://diacin.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
+                  <figure>
+                      <i class="devicon-figma-plain colored"></i> 
+                      <i class="devicon-wordpress-plain colored"></i>
+                  </figure>
+              </div>
             </div>
             <figure class="mockup"> <img src="imagens/sites/diacin.png" alt="imagem do site da DIACIN" /></figure>
           </div>
@@ -708,7 +1015,13 @@ function fechar(){
             <div>
               <h4>Site da Diretoria Acadêmica de Gestão e Tecnologia da Informação (DIATINF)</h4>
               <h5>Finalizado em 2023</h5>
-              <div><a href="https://diatinf.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+              <div>
+                  <a href="https://diatinf.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
+                  <figure>
+                      <i class="devicon-figma-plain colored"></i> 
+                      <i class="devicon-wordpress-plain colored"></i>
+                  </figure>
+              </div>
             </div>
             <figure class="mockup"> <img  src="imagens/sites/diatinf.png" alt="imagem do site da DIATINF" /></figure>
           </div>
@@ -717,7 +1030,13 @@ function fechar(){
             <div>
               <h4>Site do Encontro Anual do Iecom em Comunicações, Redes e Criptografia (ENCOM)</h4>
               <h5>Finalizado em 2024</h5>
-              <div><a href="https://encom.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+              <div>
+                  <a href="https://encom.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
+                  <figure>
+                      <i class="devicon-figma-plain colored"></i> 
+                      <i class="devicon-wordpress-plain colored"></i>
+                  </figure>
+              </div>
             </div>
             <figure class="mockup"> <img  src="imagens/sites/encom.png" alt="imagem do site do ENCOM" /></figure>
           </div>
@@ -726,7 +1045,13 @@ function fechar(){
             <div>
               <h4>Site da Diretoria de Extensão (DIREX)</h4>
               <h5>Finalizado em 2023</h5>
-              <div><a href="https://direx.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+              <div>
+                  <a href="https://direx.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
+                  <figure>
+                      <i class="devicon-figma-plain colored"></i> 
+                      <i class="devicon-wordpress-plain colored"></i>
+                  </figure>
+              </div>
             </div>
             <figure class="mockup"> <img  src="imagens/sites/direx.png" alt="imagem do site da Direx" /></figure>
           </div>
@@ -735,7 +1060,13 @@ function fechar(){
             <div>
               <h4>Site do 19º Workshop de Tecnologia em Análise em Desenvolvimento de Sistemas e Informática para Internet (WTADS/ WINFO)</h4>
               <h5>Finalizado em 2025</h5>
-              <div><a href="https://wtads.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a><figure><img src="imagens/tecnologias/figma.png" /> <img src="imagens/tecnologias/wp.png" /></figure></div>
+              <div>
+                  <a href="https://wtads.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
+                  <figure>
+                      <i class="devicon-figma-plain colored"></i> 
+                      <i class="devicon-wordpress-plain colored"></i>
+                  </figure>
+              </div>
             </div>
             <figure class="mockup"> <img  src="imagens/sites/wtads.png" alt="imagem do site do Wtads" /></figure>
           </div>
@@ -743,8 +1074,14 @@ function fechar(){
           <div id="bemtevista">
             <div>
               <h4>Site da rede social dedicada a moda: Bem te vista</h4>
-              <h5>Projeto Acadêmico</h5>
-              <div><a href="https://github.com/infoweb-projetos/Bem-te-vista"><input type="button" value="Acessar Github!"></a><figure><img src="imagens/tecnologias/react.png" /> <img src="imagens/tecnologias/node.png" /></figure></div>
+              <h5>Projeto de 2024</h5>
+              <div>
+                  <a href="https://github.com/infoweb-projetos/Bem-te-vista"><input type="button" value="Acessar Github!"></a>
+                  <figure>
+                      <i class="devicon-react-original colored"></i> 
+                      <i class="devicon-nodejs-plain colored"></i>
+                  </figure>
+              </div>
             </div>
             <figure class="mockup"> <img  src="imagens/sites/bem-te-vista.png" alt="imagem do site do bem te vista" /></figure>
           </div>
@@ -752,8 +1089,13 @@ function fechar(){
           <div id="soularte">
             <div>
               <h4>Site do e-commerce de artesanato: Soul arte</h4>
-              <h5>Projeto Acadêmico</h5>
-              <div><a href="https://github.com/PI-InfoWeb-CNAT/2023-Soul_Arte"><input type="button" value="Acessar Github!"></a><figure ><img  src="imagens/tecnologias/aspnet.png" /></figure></div>
+              <h5>Projeto de 2023</h5>
+              <div>
+                  <a href="https://github.com/PI-InfoWeb-CNAT/2023-Soul_Arte"><input type="button" value="Acessar Github!"></a>
+                  <figure>
+                      <i class="devicon-dot-net-plain-wordmark colored"></i>
+                  </figure>
+              </div>
             </div>
             <figure class="mockup"> <img  src="imagens/sites/soul-arte.png" alt="imagem do site do soul arte" /></figure>
           </div>
@@ -761,10 +1103,30 @@ function fechar(){
         </section>
       </section>
     </section>
+
+    <section id="experiencia">
+        <div class="margem">
+            <h3>Experiência Profissional</h3>
+            <div class="mt">
+                <div class="exp-item">
+                    <h4>Desenvolvedora Full-Stack</h4>
+                    <h5>Agiltec: Geotecnologia da Inovação | 05/2025 - Atualidade</h5>
+                    <p>Atuação com desenvolvimento ASP.NET (Backend) e Vue.js (Frontend), no desenvolvimento de um sistema de gerenciamento de dados para a Equatorial Energia. Responsável pelo desenvolvimento de novas histórias de usuário, foco em qualidade, desempenho e requisitos técnicos.</p>
+                </div>
+
+                <div class="exp-item">
+                    <h4>Líder da Equipe de Web Design e Desenvolvimento</h4>
+                    <h5>Centro de Soluções Aplicadas - IFRN | 07/2023 - 02/2025</h5>
+                    <p>Líder da equipe matutina, responsável por criar e aprimorar soluções para o IFRN Campus Natal Central. Trabalhei com Figma, HTML, CSS, JS e PHP integrados ao WordPress, focando em usabilidade e coerência visual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="identidades">
       <section class="margem">
         <h3>Identidades Visuais</h3>
         <div>
+          <figure><img src="imagens/identidades/nova-ligacao.svg" alt="Logo do projeto Nova Ligação" /></figure>
           <figure><img src="imagens/identidades/GeoForm - Fundo Branco.svg" alt="Logo do projeto GeoForm" /></figure>
           <figure><img src="imagens/identidades/bem-te-vista.svg" alt="Logo do projeto Bem te Vista" /></figure>
           <figure><img src="imagens/identidades/eco-patio.svg" alt="Logo do projeto Eco Patio" /></figure>
@@ -782,20 +1144,7 @@ function fechar(){
         </div>
       </section>
     </section>
-    <section id="social-media">
-      <section class="margem">
-        <div>
-          <p>Confira alguns designs feitos <br> por mim enquanto</p>
-          <h3>Social Media</h3>
-          <div>
-            <a href="https://www.instagram.com/diatinf/"><input type="button" value="@diatinf"></a>
-            <a href="https://www.instagram.com/csaifrn/"><input type="button" value="@csaifrn"></a>
-            <a href="https://www.instagram.com/encom2024/"><input type="button" value="@encom2024"></a>
-          </div>
-        </div>
-        <figure><img src="imagens/img-socialm.svg" alt="foto representativa dos post do instagram" /></figure>
-      </section>
-    </section>
+
   </main>
   <footer>
     <section class="margem">
