@@ -1,32 +1,297 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>Portfólio - Iraikare Rodrigues</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Caveat:wght@400..700&family=Nova+Square&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Michroma&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Caveat:wght@400..700&family=Nova+Square&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
   <script>
-    function abrir(){
+    function abrir() {
       document.getElementById('esmaecer').style.visibility = 'visible';
       document.getElementById('menu').style.visibility = 'visible';
       document.getElementById('x').style.visibility = 'visible';
       document.getElementById('sanduiche').style.visibility = 'hidden';
     }
-    function fechar(){
+    function fechar() {
       document.getElementById('esmaecer').style.visibility = 'hidden';
       document.getElementById('menu').style.visibility = 'hidden';
       document.getElementById('x').style.visibility = 'hidden';
       document.getElementById('sanduiche').style.visibility = 'visible';
     }
+
+    var currentLang = 'pt';
+
+    var translations = {
+      pt: {
+        'nav-sobre': 'Sobre mim',
+        'nav-habilidades': 'Habilidades',
+        'nav-projetos': 'Projetos',
+        'nav-experiencia': 'Experiência',
+        'nav-identidades': 'Identidades Visuais',
+        'nav-vetorizacoes': 'Vetorizações',
+        'about-text': 'Olá! Tenho 19 anos, sou Técnica em Informática para Internet pelo IFRN e Graduanda de Bacharelado em Tecnologia da Informação pela UFRN. Tenho experiência nas áreas de design e desenvolvimento web full-stack. Para mais informações <a href="https://drive.google.com/file/d/1whNKfAKin6b6n9V4Z1aBnaImWwrkTbqw/view?usp=sharing">clique aqui para conferir meu currículo!</a>',
+        'skills-title': 'Habilidades & Tecnologias',
+        'skills-languages': 'Linguagens',
+        'skills-backend': 'Frameworks e Bibliotecas (Backend)',
+        'skills-frontend': 'Frameworks e Bibliotecas (Frontend)',
+        'skills-databases': 'Bancos de Dados',
+        'skills-cms': 'Plataformas (CMS)',
+        'projects-title': 'Projetos',
+        'projects-corp-title': 'Sistemas Corporativos (Experiência Profissional)',
+        'projects-corp-disclaimer': 'Os sistemas abaixo são projetos reais desenvolvidos profissionalmente para a Equatorial Energia (7 estados). Por razões de confidencialidade e segurança, o acesso é restrito e os dados sensíveis foram ocultados. Em todos estes projetos atuei como desenvolvedora Full Stack utilizando <b>Vue.js</b> e <b>.NET</b>.',
+        'projects-web-title': 'Websites & Sistemas Acadêmicos',
+        'proj-sisco-title': 'SISCO - Sistema de gerenciamento de Obras',
+        'proj-sisco-status': 'Em Produção',
+        'proj-sisco-desc': 'Gerenciamento de levantamentos, anteprojetos, projetos e obras.',
+        'proj-sisco-btn': 'Sistema Interno',
+        'proj-sfm-title': 'SFM - Sistema de Fiscalização Mobile',
+        'proj-sfm-status': 'Em Produção',
+        'proj-sfm-desc': 'Gerenciamento do processo de fiscalização de obras em campo.',
+        'proj-sfm-btn': 'Sistema Interno',
+        'proj-oasis-title': 'Oasis - Ajuste de Equipamentos',
+        'proj-oasis-status': 'Em Produção',
+        'proj-oasis-desc': 'Sistema de gerenciamento de ajustes de equipamentos de alimentadores.',
+        'proj-oasis-btn': 'Sistema Interno',
+        'proj-novaligacao-title': 'Nova Ligação - Gestão de Clientes',
+        'proj-novaligacao-status': 'Em Produção',
+        'proj-novaligacao-desc': 'Gerenciamento de novas ligações com novos clientes e parceiros.',
+        'proj-novaligacao-btn': 'Sistema Interno',
+        'proj-profuturo-title': 'Site do ProFuturo - Projeto de Transformação e Crescimento Sustentável para o Campo.',
+        'proj-profuturo-status': 'Projeto de 2025',
+        'proj-profuturo-btn': 'Acessar Website!',
+        'proj-expotec-title': 'Site da EXPOTEC CNAT 2024',
+        'proj-expotec-status': 'Finalizado em 2025',
+        'proj-expotec-btn': 'Acessar Website!',
+        'proj-csa-title': 'Site do Centro de Soluções Aplicadas (CSA)',
+        'proj-csa-status': 'Finalizado em 2023',
+        'proj-csa-btn': 'Acessar Website!',
+        'proj-diacin-title': 'Site da Diretoria Acadêmica de Indústria (DIACIN)',
+        'proj-diacin-status': 'Finalizado em 2024',
+        'proj-diacin-btn': 'Acessar Website!',
+        'proj-diatinf-title': 'Site da Diretoria Acadêmica de Gestão e Tecnologia da Informação (DIATINF)',
+        'proj-diatinf-status': 'Finalizado em 2023',
+        'proj-diatinf-btn': 'Acessar Website!',
+        'proj-encom-title': 'Site do Encontro Anual do Iecom em Comunicações, Redes e Criptografia (ENCOM)',
+        'proj-encom-status': 'Finalizado em 2024',
+        'proj-encom-btn': 'Acessar Website!',
+        'proj-direx-title': 'Site da Diretoria de Extensão (DIREX)',
+        'proj-direx-status': 'Finalizado em 2023',
+        'proj-direx-btn': 'Acessar Website!',
+        'proj-wtads-title': 'Site do 19º Workshop de Tecnologia em Análise em Desenvolvimento de Sistemas e Informática para Internet (WTADS/ WINFO)',
+        'proj-wtads-status': 'Finalizado em 2025',
+        'proj-wtads-btn': 'Acessar Website!',
+        'proj-bemtevista-title': 'Site da rede social dedicada a moda: Bem te vista',
+        'proj-bemtevista-status': 'Projeto de 2024',
+        'proj-bemtevista-btn': 'Acessar Github!',
+        'proj-soularte-title': 'Site do e-commerce de artesanato: Soul arte',
+        'proj-soularte-status': 'Projeto de 2023',
+        'proj-soularte-btn': 'Acessar Github!',
+        'exp-title': 'Experiência Profissional',
+        'exp1-title': 'Desenvolvedora Full-Stack',
+        'exp1-place': 'Agiltec: Geotecnologia da Inovação | 05/2025 - Atualidade',
+        'exp1-desc': 'Atuação com desenvolvimento ASP.NET (Backend) e Vue.js (Frontend), no desenvolvimento de um sistema de gerenciamento de dados para a Equatorial Energia. Responsável pelo desenvolvimento de novas histórias de usuário, foco em qualidade, desempenho e requisitos técnicos.',
+        'exp2-title': 'Líder da Equipe de Web Design e Desenvolvimento',
+        'exp2-place': 'Centro de Soluções Aplicadas - IFRN | 07/2023 - 02/2025',
+        'exp2-desc': 'Líder da equipe matutina, responsável por criar e aprimorar soluções para o IFRN Campus Natal Central. Trabalhei com Figma, HTML, CSS, JS e PHP integrados ao WordPress, focando em usabilidade e coerência visual.',
+        'identidades-title': 'Identidades Visuais',
+        'vetorizacoes-title': 'Vetorizações',
+        'footer-copyright': '© Desenvolvido por Iraikare Rodrigues',
+        'header-portfolio': 'Portfólio'
+      },
+      en: {
+        'nav-sobre': 'About me',
+        'nav-habilidades': 'Skills',
+        'nav-projetos': 'Projects',
+        'nav-experiencia': 'Experience',
+        'nav-identidades': 'Visual Identities',
+        'nav-vetorizacoes': 'Vectorizations',
+        'about-text': "Hi! I'm 19 years old, I hold a Technical Degree in Internet Computing from IFRN and I'm pursuing a Bachelor's in Information Technology at UFRN. I have experience in design and full-stack web development.",
+        'skills-title': 'Skills & Technologies',
+        'skills-languages': 'Languages',
+        'skills-backend': 'Frameworks & Libraries (Backend)',
+        'skills-frontend': 'Frameworks & Libraries (Frontend)',
+        'skills-databases': 'Databases',
+        'skills-cms': 'Platforms (CMS)',
+        'projects-title': 'Projects',
+        'projects-corp-title': 'Corporate Systems (Professional Experience)',
+        'projects-corp-disclaimer': 'The systems below are real projects professionally developed for Equatorial Energia (7 states in Brazil). For confidentiality and security reasons, access is restricted and sensitive data has been hidden. In all of these projects I worked as a Full Stack developer using <b>Vue.js</b> and <b>.NET</b>.',
+        'projects-web-title': 'Websites & Academic Systems',
+        'proj-sisco-title': 'SISCO - Construction Management System',
+        'proj-sisco-status': 'In Production',
+        'proj-sisco-desc': 'Management of surveys, preliminary projects, projects and construction works.',
+        'proj-sisco-btn': 'Internal System',
+        'proj-sfm-title': 'SFM - Mobile Inspection System',
+        'proj-sfm-status': 'In Production',
+        'proj-sfm-desc': 'Management of the field construction inspection process.',
+        'proj-sfm-btn': 'Internal System',
+        'proj-oasis-title': 'Oasis - Equipment Adjustment',
+        'proj-oasis-status': 'In Production',
+        'proj-oasis-desc': 'Equipment adjustment management system for feeders.',
+        'proj-oasis-btn': 'Internal System',
+        'proj-novaligacao-title': 'Nova Ligação - Client Management',
+        'proj-novaligacao-status': 'In Production',
+        'proj-novaligacao-desc': 'Management of new connections with new clients and partners.',
+        'proj-novaligacao-btn': 'Internal System',
+        'proj-profuturo-title': 'ProFuturo Website - Sustainable Transformation and Growth Project for the Countryside.',
+        'proj-profuturo-status': '2025 Project',
+        'proj-profuturo-btn': 'Visit Website!',
+        'proj-expotec-title': 'EXPOTEC CNAT 2024 Website',
+        'proj-expotec-status': 'Completed in 2025',
+        'proj-expotec-btn': 'Visit Website!',
+        'proj-csa-title': 'Applied Solutions Center (CSA) Website',
+        'proj-csa-status': 'Completed in 2023',
+        'proj-csa-btn': 'Visit Website!',
+        'proj-diacin-title': 'Academic Directorate of Industry (DIACIN) Website',
+        'proj-diacin-status': 'Completed in 2024',
+        'proj-diacin-btn': 'Visit Website!',
+        'proj-diatinf-title': 'Academic Directorate of Management and Information Technology (DIATINF) Website',
+        'proj-diatinf-status': 'Completed in 2023',
+        'proj-diatinf-btn': 'Visit Website!',
+        'proj-encom-title': 'ENCOM - Annual Meeting on Communications, Networks and Cryptography Website',
+        'proj-encom-status': 'Completed in 2024',
+        'proj-encom-btn': 'Visit Website!',
+        'proj-direx-title': 'Extension Directorate (DIREX) Website',
+        'proj-direx-status': 'Completed in 2023',
+        'proj-direx-btn': 'Visit Website!',
+        'proj-wtads-title': '19th Workshop on Technology in Systems Development and Internet Computing (WTADS/WINFO) Website',
+        'proj-wtads-status': 'Completed in 2025',
+        'proj-wtads-btn': 'Visit Website!',
+        'proj-bemtevista-title': 'Fashion social network website: Bem te vista',
+        'proj-bemtevista-status': '2024 Project',
+        'proj-bemtevista-btn': 'Visit Github!',
+        'proj-soularte-title': 'Handcraft e-commerce website: Soul arte',
+        'proj-soularte-status': '2023 Project',
+        'proj-soularte-btn': 'Visit Github!',
+        'exp-title': 'Professional Experience',
+        'exp1-title': 'Full-Stack Developer',
+        'exp1-place': 'Agiltec: Geotecnologia da Inovação | 05/2025 - Present',
+        'exp1-desc': 'Working with ASP.NET (Backend) and Vue.js (Frontend) development, building a data management system for Equatorial Energia. Responsible for developing new user stories, focusing on quality, performance and technical requirements.',
+        'exp2-title': 'Web Design and Development Team Leader',
+        'exp2-place': 'Centro de Soluções Aplicadas - IFRN | 07/2023 - 02/2025',
+        'exp2-desc': 'Morning team leader, responsible for creating and improving solutions for IFRN Campus Natal Central. Worked with Figma, HTML, CSS, JS and PHP integrated with WordPress, focusing on usability and visual coherence.',
+        'identidades-title': 'Visual Identities',
+        'vetorizacoes-title': 'Vectorizations',
+        'footer-copyright': '© Developed by Iraikare Rodrigues',
+        'header-portfolio': 'Portfolio'
+      }
+    };
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('portfolio-lang', lang);
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+      document.title = lang === 'pt' ? 'Portfólio - Iraikare Rodrigues' : 'Portfolio - Iraikare Rodrigues';
+
+      var t = translations[lang];
+      var elements = document.querySelectorAll('[data-i18n]');
+      for (var i = 0; i < elements.length; i++) {
+        var el = elements[i];
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+          if (el.tagName === 'INPUT') {
+            el.value = t[key];
+          } else if (key === 'about-text' || key === 'projects-corp-disclaimer') {
+            el.innerHTML = t[key];
+          } else {
+            el.textContent = t[key];
+          }
+        }
+      }
+
+      var btnsPt = document.querySelectorAll('.lang-btn-pt');
+      var btnsEn = document.querySelectorAll('.lang-btn-en');
+      for (var i = 0; i < btnsPt.length; i++) {
+        btnsPt[i].classList.toggle('lang-active', lang === 'pt');
+      }
+      for (var i = 0; i < btnsEn.length; i++) {
+        btnsEn[i].classList.toggle('lang-active', lang === 'en');
+      }
+
+      var heroImg = document.getElementById('hero-img');
+      if (heroImg) {
+        heroImg.src = lang === 'pt' ? 'imagens/portfolio-nome.svg' : 'imagens/portfolio-nome-en.svg';
+        heroImg.alt = lang === 'pt' ? 'portfólio' : 'portfolio';
+      }
+    }
+
+    function initLanguage() {
+      var stored = localStorage.getItem('portfolio-lang');
+      if (stored) {
+        setLanguage(stored);
+      } else {
+        var browserLang = navigator.language || navigator.userLanguage || 'pt';
+        if (browserLang.startsWith('pt')) {
+          setLanguage('pt');
+        } else {
+          setLanguage('en');
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initLanguage);
   </script>
   <style>
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      margin-left: 1.5em;
+      background: rgba(35, 64, 14, 0.08);
+      border-radius: 50px;
+      padding: 3px;
+      position: relative;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      padding: 0.35em 0.8em;
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+      font-family: "Lato", sans-serif;
+      font-size: 0.85em;
+      font-weight: 500;
+      color: #23400E;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lang-btn:hover {
+      opacity: 0.8;
+    }
+
+    .lang-btn.lang-active {
+      opacity: 1;
+      background: white;
+      box-shadow: 0 2px 8px rgba(35, 64, 14, 0.15);
+    }
+
+    .lang-btn .flag-icon {
+      width: 20px;
+      height: 14px;
+      border-radius: 2px;
+      object-fit: cover;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    }
+
+    #menu .lang-switcher {
+      justify-content: flex-end;
+      margin: 1em 0 0 0;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -37,39 +302,40 @@
       background-color: #F2EAD0;
     }
 
-    div#esmaecer{
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        position: fixed;
-        z-index: 2;
-        visibility: hidden;
+    div#esmaecer {
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: fixed;
+      z-index: 2;
+      visibility: hidden;
     }
 
-    header #menu{
-        position: fixed;
-        visibility: hidden;
-        padding: 2em 1.5em;
-        height: 100vh;
-        background-color: white;
-        top: 0;
-        right: 0;
-        text-align: right;
-        list-style-type: none;
-        z-index: 2;
-        display: block;
+    header #menu {
+      position: fixed;
+      visibility: hidden;
+      padding: 2em 1.5em;
+      height: 100vh;
+      background-color: white;
+      top: 0;
+      right: 0;
+      text-align: right;
+      list-style-type: none;
+      z-index: 2;
+      display: block;
     }
 
-    #menusand{
+    #menusand {
       visibility: hidden;
       position: absolute;
       right: 2em;
       width: 50px;
       top: 2em;
     }
-    #menu li{
+
+    #menu li {
       padding: 0.5em 0;
     }
 
@@ -87,7 +353,8 @@
       padding-bottom: 10em;
     }
 
-    header nav, header nav ol{
+    header nav,
+    header nav ol {
       display: flex;
       justify-content: space-between;
       list-style-type: none;
@@ -103,7 +370,9 @@
       column-gap: 2.19em;
     }
 
-    header nav ol li a, footer ul li a, #sobre ul li a {
+    header nav ol li a,
+    footer ul li a,
+    #sobre ul li a {
       text-decoration: none;
       color: black;
       font-family: "Lato", sans-serif;
@@ -114,40 +383,48 @@
       font-weight: 500;
     }
 
-    header nav div p b, footer div p b {
+    header nav div p b,
+    footer div p b {
       font-family: "Lato", sans-serif;
       font-weight: 700;
     }
 
-    header nav div a, footer div a {
+    header nav div a,
+    footer div a {
       text-decoration: none;
       color: black;
     }
 
-    #experiencia .margem, footer .margem, #habilidades .margem {
+    #experiencia .margem,
+    footer .margem,
+    #habilidades .margem {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    
+
     #habilidades .margem {
-        align-items: flex-start;
+      align-items: flex-start;
     }
 
-    header section section{
+    header section section {
       display: flex;
       justify-content: center;
     }
-    header figure{
+
+    header figure {
       width: 40%;
     }
-    header figure img{
+
+    header figure img {
       width: 100%;
     }
-    header h1 img{
+
+    header h1 img {
       width: 100%;
     }
-    header>section>section>div{
+
+    header>section>section>div {
       width: 55%;
     }
 
@@ -169,7 +446,8 @@
     #sobre {
       color: #23400E;
     }
-    #sobre>section{
+
+    #sobre>section {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -202,7 +480,8 @@
       justify-content: flex-end;
     }
 
-    #sobre ul, footer ul {
+    #sobre ul,
+    footer ul {
       list-style: none;
       display: flex;
       column-gap: 2.25em;
@@ -210,47 +489,60 @@
       justify-content: right;
     }
 
-    #sobre ul li a, footer ul li a {
+    #sobre ul li a,
+    footer ul li a {
       display: flex;
       align-items: center;
       column-gap: 0.63em;
       font-size: 1em;
       color: #23400E;
     }
-    #sobre figure img{
+
+    #sobre figure img {
       width: 100%;
     }
 
-    #projetos, #vetorizacoes, #identidades, #experiencia, #habilidades {
+    #projetos,
+    #vetorizacoes,
+    #identidades,
+    #experiencia,
+    #habilidades {
       padding: 2.5em 0 3.5em 0;
     }
-    #projetos, #experiencia {
+
+    #projetos,
+    #experiencia {
       background-color: #FFF9E8;
     }
 
     #experiencia {
-        margin-top: 0; 
-        padding-top: 6em; 
-        background-image: url(imagens/vector-sm.svg);
-        background-repeat: no-repeat;
-        background-position: top 0 left 0;
+      margin-top: 0;
+      padding-top: 6em;
+      background-image: url(imagens/vector-sm.svg);
+      background-repeat: no-repeat;
+      background-position: top 0 left 0;
     }
-    
+
     #projetos {
       background-image: url(imagens/bg-tec.svg);
       background-repeat: no-repeat;
       background-position: top 0 right 0;
     }
 
-    #projetos .margem{
+    #projetos .margem {
       padding-top: 3.75em;
     }
-    
+
     #experiencia .margem {
       display: block;
     }
 
-    #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3, #experiencia h3, #habilidades h3 {
+    #projetos h3,
+    #vetorizacoes h3,
+    #tecnologias h3,
+    #identidades h3,
+    #experiencia h3,
+    #habilidades h3 {
       font-size: 1.5em;
       color: #23400E;
       font-weight: 400;
@@ -262,60 +554,64 @@
     }
 
     #projetos h3.titulo-projetos {
-        font-family: "Michroma", sans-serif;
-        font-size: 1.2em; 
-        font-weight: 600;
-        color: #23400E;
-        margin-top: 3em;
-        margin-bottom: 0.5em;
-        border: none; 
-        text-align: left; 
-        width: 100%;
-        padding-bottom: 0.5em;
+      font-family: "Michroma", sans-serif;
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #23400E;
+      margin-top: 3em;
+      margin-bottom: 0.5em;
+      border: none;
+      text-align: left;
+      width: 100%;
+      padding-bottom: 0.5em;
     }
-    
+
     .disclaimer {
-        text-align: left;
-        font-family: "Lato", sans-serif;
-        font-size: 1em;
-        font-weight: 400;
-        color: #555;
-        margin-bottom: 3em;
-        max-width: 100%;
+      text-align: left;
+      font-family: "Lato", sans-serif;
+      font-size: 1em;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 3em;
+      max-width: 100%;
     }
 
     /* Botão estático (Sem hover, mas visualmente igual) */
     .btn-static {
-        color: white;
-        background-color: #BF395D;
-        border-radius: 5px;
-        padding: 5px 10px;
-        border: none;
-        font-size: 0.85em;
-        margin-right: 5px;
-        cursor: default;
-        font-family: "Michroma", sans-serif;
-        display: inline-block;
+      color: white;
+      background-color: #BF395D;
+      border-radius: 5px;
+      padding: 5px 10px;
+      border: none;
+      font-size: 0.85em;
+      margin-right: 5px;
+      cursor: default;
+      font-family: "Michroma", sans-serif;
+      display: inline-block;
     }
 
     /* PLACEHOLDER COM MESMAS PROPRIEDADES VISUAIS DO MOCKUP */
     .placeholder-media {
-        width: 40%; /* Padrão Desktop */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-    
-    .placeholder-media img, .placeholder-media video {
-        width: 100%;
-        height: auto; /* Altura automática para não distorcer */
-        object-fit: cover;
-        border-radius: 8px;
+      width: 40%;
+      /* Padrão Desktop */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      overflow: hidden;
     }
 
-    #projetos input, #experiencia input {
+    .placeholder-media img,
+    .placeholder-media video {
+      width: 100%;
+      height: auto;
+      /* Altura automática para não distorcer */
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    #projetos input,
+    #experiencia input {
       color: white;
       background-color: #BF395D;
       border-radius: 5px;
@@ -326,7 +622,8 @@
       cursor: pointer;
     }
 
-    #projetos input:hover, #experiencia input:hover {
+    #projetos input:hover,
+    #experiencia input:hover {
       background-color: #23400E;
     }
 
@@ -339,9 +636,9 @@
       gap: 10px;
       align-items: center;
     }
-    
+
     #projetos div>div>div figure i {
-      font-size: 1.5em; 
+      font-size: 1.5em;
     }
 
     #projetos>div {
@@ -362,8 +659,9 @@
       color: #23400E;
       margin-bottom: 0.5em;
     }
-    #projetos h4{
-        width: 20em;
+
+    #projetos h4 {
+      width: 20em;
     }
 
     h5 {
@@ -372,8 +670,8 @@
       color: #23400E;
       font-weight: 400;
       width: fit-content;
-      font-family: "Michroma", sans-serif; 
-      
+      font-family: "Michroma", sans-serif;
+
       border-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTY0IiBoZWlnaHQ9IjE1OCIgdmlld0JveD0iMCAwIDU2NCAxNTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01IDE1M1Y1SDU1OVYxNTNINVoiIHN0cm9rZT0iIzIzNDAwRSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz4KPGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjUiIGZpbGw9IiMyMzQwMEUiLz4KPGNpcmNsZSBjeD0iNTU5IiBjeT0iNSIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8Y2lyY2xlIGN4PSI1IiBjeT0iMTUzIiByPSI1IiBmaWxsPSIjMjM0MDBFIi8+CjxjaXJjbGUgY3g9IjU1OSIgY3k9IjE1MyIgcj0iNSIgZmlsbD0iIzIzNDAwRSIvPgo8L3N2Zz4K") 13 / 13px / 13px repeat;
       border-style: solid;
     }
@@ -382,7 +680,8 @@
       padding: 10px 20px;
     }
 
-    #vetorizacoes div, #identidades div {
+    #vetorizacoes div,
+    #identidades div {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -392,6 +691,11 @@
 
     #vetorizacoes div img {
       max-width: 22em;
+      transition: transform 0.3s ease;
+    }
+
+    #vetorizacoes div img:hover {
+      transform: scale(1.08);
     }
 
     footer {
@@ -402,21 +706,30 @@
       padding-top: 13em;
       padding-bottom: 7em;
     }
-    #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3, #experiencia h3, #habilidades h3{
+
+    #projetos h3,
+    #vetorizacoes h3,
+    #tecnologias h3,
+    #identidades h3,
+    #experiencia h3,
+    #habilidades h3 {
       margin: 0 auto;
       text-align: center;
     }
-    .mockup img{
+
+    .mockup img {
       max-width: 100%;
     }
-    #projetos .margem>section>div{
+
+    #projetos .margem>section>div {
       max-width: 48%;
       display: flex;
       justify-content: space-between;
-      align-items: center; /* ALINHAMENTO CORRIGIDO */
+      align-items: center;
+      /* ALINHAMENTO CORRIGIDO */
     }
 
-    #sobre p a{
+    #sobre p a {
       color: #23400E;
       font-weight: 500;
       font-family: "Lato", sans-serif;
@@ -424,119 +737,128 @@
       text-decoration: underline;
 
     }
-    #sobre>section>div{
+
+    #sobre>section>div {
       width: 50%;
     }
-    #sobre>section>figure{
+
+    #sobre>section>figure {
       width: 45%;
     }
 
     .exp-item {
-        margin-bottom: 3em;
-        border-left: 3px solid #23400E;
-        padding-left: 1.5em;
+      margin-bottom: 3em;
+      border-left: 3px solid #23400E;
+      padding-left: 1.5em;
     }
 
     .exp-item h4 {
-        font-family: "Michroma", sans-serif;
-        font-size: 1.2em;
-        font-weight: 600;
-        color: #23400E;
-        width: auto;
-        text-align: left;
+      font-family: "Michroma", sans-serif;
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #23400E;
+      width: auto;
+      text-align: left;
     }
 
     .exp-item h5 {
-        font-family: "Lato", sans-serif;
-        font-size: 1em;
-        font-style: italic;
-        font-weight: 400;
-        color: #555;
-        margin: 0.5em 0;
-        border: none;
-        width: auto;
+      font-family: "Lato", sans-serif;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 400;
+      color: #555;
+      margin: 0.5em 0;
+      border: none;
+      width: auto;
     }
 
     .exp-item p {
-        font-family: "Lato", sans-serif;
-        font-size: 1em;
-        color: #23400E;
-        line-height: 1.5;
+      font-family: "Lato", sans-serif;
+      font-size: 1em;
+      color: #23400E;
+      line-height: 1.5;
     }
 
     .mt {
       margin-top: 2em;
     }
-   .skills-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        width: 100%;
-        margin-top: 2em;
+
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 2em;
     }
 
     .skills-row {
-        display: flex;
-        justify-content: center; 
-        gap: 4em;
-        flex-wrap: wrap; 
-        width: 100%;
-        margin-bottom: 1.5em;
+      display: flex;
+      justify-content: center;
+      gap: 4em;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 1.5em;
     }
 
     .tech-category {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .tech-category h4 {
-        font-family: "Lato", sans-serif;
-        font-weight: 700;
-        color: #23400E;
-        margin-bottom: 1em;
-        font-size: 1.1em;
-        text-align: center;
-        white-space: nowrap; 
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      color: #23400E;
+      margin-bottom: 1em;
+      font-size: 1.1em;
+      text-align: center;
+      white-space: nowrap;
     }
 
     .tech-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1em;
-        justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
     }
 
     .tech-tag {
-        background-color: #FFF9E8;
-        border: 1px solid #23400E;
-        border-radius: 50px;
-        padding: 0.5em 1.2em;
-        display: flex;
-        align-items: center;
-        gap: 0.8em;
-        font-family: "Lato", sans-serif;
-        font-size: 0.9em;
-        color: #23400E;
-        font-weight: 500;
-        transition: transform 0.2s;
-        cursor: default;
+      background-color: #FFF9E8;
+      border: 1px solid #23400E;
+      border-radius: 50px;
+      padding: 0.5em 1.2em;
+      display: flex;
+      align-items: center;
+      gap: 0.8em;
+      font-family: "Lato", sans-serif;
+      font-size: 0.9em;
+      color: #23400E;
+      font-weight: 500;
+      transition: transform 0.2s;
+      cursor: default;
     }
-    
+
     .tech-tag:hover {
-        transform: scale(1.05);
-        background-color: #23400E;
-        color: #FFF9E8;
+      transform: scale(1.05);
+      background-color: #23400E;
+      color: #FFF9E8;
     }
-    
+
     .tech-tag i {
-        font-size: 1.5em; 
+      font-size: 1.5em;
     }
-    
+
     #identidades div figure img {
       width: 200px;
+      transition: transform 0.3s ease;
     }
-    .p-projeto{
+
+    #identidades div figure img:hover {
+      transform: scale(1.08);
+    }
+
+    .p-projeto {
       font-family: "Lato", sans-serif;
       font-size: 1em;
       width: 20em;
@@ -544,203 +866,262 @@
       margin-bottom: 1em;
     }
 
-    @media screen and (max-width: 770px){
-        .skills-row {
-            gap: 2em;
-            flex-direction: column;
-        }
+    @media screen and (max-width: 770px) {
+      .skills-row {
+        gap: 2em;
+        flex-direction: column;
+      }
     }
-    @media screen and (max-width: 1024px){
-      
-      header>section>section{
+
+    @media screen and (max-width: 1024px) {
+
+      header>section>section {
         flex-wrap: wrap-reverse;
         justify-content: center;
       }
-      #sobre>section{
+
+      #sobre>section {
         flex-wrap: wrap-reverse;
         justify-content: center;
       }
-      #sobre div div{
+
+      #sobre div div {
         justify-content: center;
       }
-      #sobre p{
+
+      #sobre p {
         text-align: center;
       }
-      #sobre ul{
+
+      #sobre ul {
         justify-content: center;
         flex-wrap: wrap;
         row-gap: 1em;
       }
-      #sobre h3{
+
+      #sobre h3 {
         font-size: 2em;
       }
-      #vetorizacoes div, #identidades div{
+
+      #vetorizacoes div,
+      #identidades div {
         justify-content: space-evenly;
       }
-      #identidades div img{
+
+      #identidades div img {
         width: 20vw;
       }
-      #vetorizacoes div img{
+
+      #vetorizacoes div img {
         width: 25vw;
       }
-      #experiencia h3, #habilidades h3{
+
+      #experiencia h3,
+      #habilidades h3 {
         margin: 1em auto;
       }
-      #projetos h3, #vetorizacoes h3, #tecnologias h3, #identidades h3, #experiencia h3{
+
+      #projetos h3,
+      #vetorizacoes h3,
+      #tecnologias h3,
+      #identidades h3,
+      #experiencia h3 {
         font-size: 1.5em;
       }
-      
+
       #projetos h3.titulo-projetos {
         text-align: center;
       }
 
-      #experiencia .margem{
+      #experiencia .margem {
         flex-wrap: wrap;
         justify-content: center;
         row-gap: 3em;
       }
-      #experiencia div>div{
+
+      #experiencia div>div {
         max-width: 100%;
       }
-      #experiencia p{
+
+      #experiencia p {
         padding-top: 1em;
         width: fit-content;
         text-align: left;
         margin: 0;
       }
-      #projetos h4, #projetos input{
+
+      #projetos h4,
+      #projetos input {
         font-size: 1em;
       }
-    
-      #projetos .margem>section>div{
+
+      #projetos .margem>section>div {
         max-width: 100%;
         justify-content: center;
       }
+
       #projetos div>div>div img {
         height: 60%;
       }
-      
+
       /* IGUALA A LARGURA DAS IMAGENS/MOCKUPS EM TABLET PARA 40% */
-      #projetos .mockup, #projetos .placeholder-media {
+      #projetos .mockup,
+      #projetos .placeholder-media {
         width: 40%;
       }
 
-      #projetos .margem>section{
+      #projetos .margem>section {
         justify-content: center;
       }
-      #sobre ul li a, #sobre p{
+
+      #sobre ul li a,
+      #sobre p {
         font-size: 1rem;
       }
-      h2#ano{
+
+      h2#ano {
         font-size: 1.5em;
         left: 75%;
         top: 13%;
       }
-      #sobre>section>div>div>img{
+
+      #sobre>section>div>div>img {
         width: 10%;
       }
-      header{
+
+      header {
         padding-bottom: 8em;
       }
-      header>section>section>div{
+
+      header>section>section>div {
         width: 55%;
       }
-      #sobre>section>div{
+
+      #sobre>section>div {
         width: 90%;
       }
+
       #sobre>section>figure {
         display: none;
       }
-      #experiencia p, #experiencia input {
+
+      #experiencia p,
+      #experiencia input {
         font-size: 1em;
       }
-      #menusand{
+
+      #menusand {
         visibility: visible;
       }
-      #menudesk{
+
+      #menudesk {
         display: none;
       }
 
     }
-    @media screen and (max-width: 770px){
-      header>section>section{
+
+    @media screen and (max-width: 770px) {
+      header>section>section {
         flex-wrap: wrap-reverse;
         justify-content: center;
       }
-      header>section>section>div{
+
+      header>section>section>div {
         width: 100%;
       }
-      header>section>section>figure{
+
+      header>section>section>figure {
         width: 100%;
       }
+
       #sobre>section>figure {
         display: block;
         width: 100%;
       }
-      #sobre h3{
+
+      #sobre h3 {
         line-height: 0.7em;
         margin-bottom: 0.5em;
       }
+
       #sobre>section>div>div>img {
         width: 30%;
       }
+
       #projetos .margem>section>div {
         max-width: 100%;
         justify-content: center;
         flex-wrap: wrap-reverse;
       }
-      
-      #projetos .mockup, #projetos .placeholder-media {
+
+      #projetos .mockup,
+      #projetos .placeholder-media {
         width: 100%;
         margin-bottom: 1em;
       }
 
-      #projetos .margem>section>div>div{
+      #projetos .margem>section>div>div {
         max-width: 98%;
       }
+
       #projetos div>div>div {
         justify-content: center;
       }
-      #projetos h4{
+
+      #projetos h4 {
         text-align: center;
       }
-      #projetos h5{
+
+      #projetos h5 {
         margin-left: auto;
         margin-right: auto;
       }
-      #identidades div img{
+
+      #identidades div img {
         width: 60vw;
       }
-      #vetorizacoes div img{
+
+      #vetorizacoes div img {
         width: 80vw;
       }
-      #identidades div , #vetorizacoes div {
+
+      #identidades div,
+      #vetorizacoes div {
         row-gap: 2em;
       }
-      #projetos h3{
+
+      #projetos h3 {
         margin-top: 2em;
       }
-      #experiencia div>div{
+
+      #experiencia div>div {
         justify-content: center;
       }
-      #experiencia img{
+
+      #experiencia img {
         width: 90vw;
       }
-      footer .margem{
+
+      footer .margem {
         flex-wrap: wrap-reverse;
         row-gap: 2em;
       }
-      #sobre ul li a, #sobre p {
-          font-size: 1rem;
+
+      #sobre ul li a,
+      #sobre p {
+        font-size: 1rem;
       }
+
       #sobre>section {
         row-gap: 2em;
       }
-      footer .margem{
+
+      footer .margem {
         justify-content: center;
         text-align: center;
       }
-      .p-projeto{
+
+      .p-projeto {
         text-align: center;
       }
     }
@@ -748,40 +1129,116 @@
 </head>
 
 <body>
-  <a href="javascript:fechar()"><div id="esmaecer"></div></a>
+  <a href="javascript:fechar()">
+    <div id="esmaecer"></div>
+  </a>
   <header>
     <section class="margem">
       <nav>
         <div> <a href="index.html">
-            <p><b>Portfólio</b></p>
+            <p><b data-i18n="header-portfolio">Portfólio</b></p>
             <p>Iraikare Rodrigues</p>
           </a></div>
-          <div>
-            <figure id="menusand">
-              <a href="javascript:abrir()"><img src="imagens/sand.png" width="45em"></a>
+        <div>
+          <figure id="menusand">
+            <a href="javascript:abrir()"><img src="imagens/sand.png" width="45em"></a>
           </figure>
           <ol id="menu">
-              <li><a href="#sobre">Sobre mim</a></li>
-              <li><a href="#habilidades">Habilidades</a></li>
-              <li><a href="#projetos">Projetos</a></li>
-              <li><a href="#experiencia">Experiência</a></li>
-              <li><a href="#identidades">Identidades Visuais</a></li>
-              <li><a href="#vetorizacoes">Vetorizações</a></li>
+            <li><a href="#sobre" data-i18n="nav-sobre">Sobre mim</a></li>
+            <li><a href="#habilidades" data-i18n="nav-habilidades">Habilidades</a></li>
+            <li><a href="#projetos" data-i18n="nav-projetos">Projetos</a></li>
+            <li><a href="#experiencia" data-i18n="nav-experiencia">Experiência</a></li>
+            <li><a href="#identidades" data-i18n="nav-identidades">Identidades Visuais</a></li>
+            <li><a href="#vetorizacoes" data-i18n="nav-vetorizacoes">Vetorizações</a></li>
+            <li>
+              <div class="lang-switcher">
+                <button class="lang-btn lang-btn-pt lang-active" onclick="setLanguage('pt')" title="Português">
+                  <svg class="flag-icon" viewBox="0 0 640 480">
+                    <rect width="640" height="480" fill="#009b3a" />
+                    <polygon points="320,39 600,240 320,441 40,240" fill="#fedf00" />
+                    <circle cx="320" cy="240" r="90" fill="#002776" />
+                    <path d="M200,260 Q320,200 440,260" stroke="white" stroke-width="12" fill="none" />
+                  </svg>
+                  PT
+                </button>
+                <button class="lang-btn lang-btn-en" onclick="setLanguage('en')" title="English">
+                  <svg class="flag-icon" viewBox="0 0 640 480">
+                    <rect width="640" height="480" fill="#002868" />
+                    <g fill="white" stroke="#bf0a30" stroke-width="40">
+                      <line x1="0" y1="240" x2="640" y2="240" stroke="#bf0a30" stroke-width="74" />
+                      <line x1="0" y1="240" x2="640" y2="240" stroke="white" stroke-width="37" />
+                      <rect y="0" width="260" height="260" fill="#002868" />
+                    </g>
+                    <rect width="640" height="37" y="0" fill="#bf0a30" />
+                    <rect width="640" height="37" y="74" fill="#bf0a30" />
+                    <rect width="640" height="37" y="148" fill="#bf0a30" />
+                    <rect width="640" height="37" y="296" fill="#bf0a30" />
+                    <rect width="640" height="37" y="370" fill="#bf0a30" />
+                    <rect width="640" height="37" y="444" fill="#bf0a30" />
+                    <rect width="640" height="37" y="37" fill="white" />
+                    <rect width="640" height="37" y="111" fill="white" />
+                    <rect width="640" height="37" y="185" fill="white" />
+                    <rect width="640" height="37" y="259" fill="white" />
+                    <rect width="640" height="37" y="333" fill="white" />
+                    <rect width="640" height="37" y="407" fill="white" />
+                    <rect width="260" height="260" fill="#002868" />
+                  </svg>
+                  EN
+                </button>
+              </div>
+            </li>
           </ol>
-          </div>
+        </div>
         <ol id="menudesk">
-          <li><a href="#sobre">Sobre mim</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#experiencia">Experiência</a></li>
-          <li><a href="#identidades">Identidades Visuais</a></li>
-          <li><a href="#vetorizacoes">Vetorizações</a></li>
+          <li><a href="#sobre" data-i18n="nav-sobre">Sobre mim</a></li>
+          <li><a href="#habilidades" data-i18n="nav-habilidades">Habilidades</a></li>
+          <li><a href="#projetos" data-i18n="nav-projetos">Projetos</a></li>
+          <li><a href="#experiencia" data-i18n="nav-experiencia">Experiência</a></li>
+          <li><a href="#identidades" data-i18n="nav-identidades">Identidades Visuais</a></li>
+          <li><a href="#vetorizacoes" data-i18n="nav-vetorizacoes">Vetorizações</a></li>
+          <li>
+            <div class="lang-switcher">
+              <button class="lang-btn lang-btn-pt lang-active" onclick="setLanguage('pt')" title="Português">
+                <svg class="flag-icon" viewBox="0 0 640 480">
+                  <rect width="640" height="480" fill="#009b3a" />
+                  <polygon points="320,39 600,240 320,441 40,240" fill="#fedf00" />
+                  <circle cx="320" cy="240" r="90" fill="#002776" />
+                  <path d="M200,260 Q320,200 440,260" stroke="white" stroke-width="12" fill="none" />
+                </svg>
+                PT
+              </button>
+              <button class="lang-btn lang-btn-en" onclick="setLanguage('en')" title="English">
+                <svg class="flag-icon" viewBox="0 0 640 480">
+                  <rect width="640" height="480" fill="#002868" />
+                  <g fill="white" stroke="#bf0a30" stroke-width="40">
+                    <line x1="0" y1="240" x2="640" y2="240" stroke="#bf0a30" stroke-width="74" />
+                    <line x1="0" y1="240" x2="640" y2="240" stroke="white" stroke-width="37" />
+                    <rect y="0" width="260" height="260" fill="#002868" />
+                  </g>
+                  <rect width="640" height="37" y="0" fill="#bf0a30" />
+                  <rect width="640" height="37" y="74" fill="#bf0a30" />
+                  <rect width="640" height="37" y="148" fill="#bf0a30" />
+                  <rect width="640" height="37" y="296" fill="#bf0a30" />
+                  <rect width="640" height="37" y="370" fill="#bf0a30" />
+                  <rect width="640" height="37" y="444" fill="#bf0a30" />
+                  <rect width="640" height="37" y="37" fill="white" />
+                  <rect width="640" height="37" y="111" fill="white" />
+                  <rect width="640" height="37" y="185" fill="white" />
+                  <rect width="640" height="37" y="259" fill="white" />
+                  <rect width="640" height="37" y="333" fill="white" />
+                  <rect width="640" height="37" y="407" fill="white" />
+                  <rect width="260" height="260" fill="#002868" />
+                </svg>
+                EN
+              </button>
+            </div>
+          </li>
         </ol>
       </nav>
       <section>
         <div style="position: relative;">
           <h2 id="ano">2025</h2>
-          <h1><img src="imagens/portfolio-nome.svg" alt="portfólio"></h1>
+          <h1><img id="hero-img" src="imagens/portfolio-nome.svg" alt="portfólio"></h1>
         </div>
       </section>
     </section>
@@ -796,7 +1253,11 @@
           <div>
             <h3>Iraikare Rodrigues</h3>
           </div>
-          <p>Olá! Tenho 19 anos, sou Técnica em Informática para Internet pelo IFRN e Graduanda de Bacharelado em Tecnologia da Informação pela UFRN. Tenho experiência nas áreas de design e desenvolvimento web full-stack. Para mais informações <a href="https://drive.google.com/file/d/1whNKfAKin6b6n9V4Z1aBnaImWwrkTbqw/view?usp=sharing">clique aqui para conferir meu currículo!</a></p>
+          <p data-i18n="about-text">Olá! Tenho 19 anos, sou Técnica em Informática para Internet pelo IFRN e Graduanda
+            de Bacharelado em Tecnologia da Informação pela UFRN. Tenho experiência nas áreas de design e
+            desenvolvimento web full-stack. Para mais informações <a
+              href="https://drive.google.com/file/d/1whNKfAKin6b6n9V4Z1aBnaImWwrkTbqw/view?usp=sharing">clique aqui para
+              conferir meu currículo!</a></p>
           <ul>
             <li><a href="https://www.instagram.com/iraikare/"><img src="imagens/redes/insta.svg"> @iraikare</a></li>
             <li><a href="https://www.linkedin.com/in/iraikare"><img src="imagens/redes/linkedin.svg"> @Iraikare</a></li>
@@ -806,159 +1267,168 @@
       </section>
     </section>
     <section id="habilidades">
-        <div class="margem" style="display: block;">
-            <h3>Habilidades & Tecnologias</h3>
-            
-            <div class="skills-container">
-                
-                <div class="skills-row">
-                    <div class="tech-category">
-                        <h4>Linguagens</h4>
-                        <div class="tech-grid">
-                            <div class="tech-tag"><i class="devicon-csharp-plain colored"></i> C#</div>
-                            <div class="tech-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
-                            <div class="tech-tag"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
-                            <div class="tech-tag"><i class="devicon-html5-plain colored"></i> HTML5</div>
-                            <div class="tech-tag"><i class="devicon-css3-plain colored"></i> CSS3</div>
-                        </div>
-                    </div>
-                </div>
+      <div class="margem" style="display: block;">
+        <h3 data-i18n="skills-title">Habilidades & Tecnologias</h3>
 
-                <div class="skills-row">
-                    <div class="tech-category">
-                        <h4>Frameworks e Bibliotecas (Backend)</h4>
-                        <div class="tech-grid">
-                            <div class="tech-tag"><i class="devicon-dot-net-plain-wordmark colored"></i> ASP.NET</div>
-                            <div class="tech-tag"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
-                        </div>
-                    </div>
+        <div class="skills-container">
 
-                    <div class="tech-category">
-                        <h4>Frameworks e Bibliotecas (Frontend)</h4>
-                        <div class="tech-grid">
-                            <div class="tech-tag"><i class="devicon-react-original colored"></i> React</div>
-                            <div class="tech-tag"><i class="devicon-vuejs-plain colored"></i> Vue.js</div>
-                            <div class="tech-tag"><i class="devicon-tailwindcss-original colored"></i> Tailwind CSS</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-row">
-                    <div class="tech-category">
-                        <h4>Bancos de Dados</h4>
-                        <div class="tech-grid">
-                            <div class="tech-tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
-                            <div class="tech-tag"><i class="devicon-oracle-original colored"></i> Oracle</div>
-                        </div>
-                    </div>
-
-                    <div class="tech-category">
-                        <h4>Plataformas (CMS)</h4>
-                        <div class="tech-grid">
-                            <div class="tech-tag"><i class="devicon-wordpress-plain colored"></i> WordPress</div>
-                        </div>
-                    </div>
-                </div>
-
+          <div class="skills-row">
+            <div class="tech-category">
+              <h4 data-i18n="skills-languages">Linguagens</h4>
+              <div class="tech-grid">
+                <div class="tech-tag"><i class="devicon-csharp-plain colored"></i> C#</div>
+                <div class="tech-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                <div class="tech-tag"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+                <div class="tech-tag"><i class="devicon-html5-plain colored"></i> HTML5</div>
+                <div class="tech-tag"><i class="devicon-css3-plain colored"></i> CSS3</div>
+              </div>
             </div>
+          </div>
+
+          <div class="skills-row">
+            <div class="tech-category">
+              <h4 data-i18n="skills-backend">Frameworks e Bibliotecas (Backend)</h4>
+              <div class="tech-grid">
+                <div class="tech-tag"><i class="devicon-dot-net-plain-wordmark colored"></i> ASP.NET</div>
+                <div class="tech-tag"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+              </div>
+            </div>
+
+            <div class="tech-category">
+              <h4 data-i18n="skills-frontend">Frameworks e Bibliotecas (Frontend)</h4>
+              <div class="tech-grid">
+                <div class="tech-tag"><i class="devicon-react-original colored"></i> React</div>
+                <div class="tech-tag"><i class="devicon-vuejs-plain colored"></i> Vue.js</div>
+                <div class="tech-tag"><i class="devicon-tailwindcss-original colored"></i> Tailwind CSS</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-row">
+            <div class="tech-category">
+              <h4 data-i18n="skills-databases">Bancos de Dados</h4>
+              <div class="tech-grid">
+                <div class="tech-tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+                <div class="tech-tag"><i class="devicon-oracle-original colored"></i> Oracle</div>
+              </div>
+            </div>
+
+            <div class="tech-category">
+              <h4 data-i18n="skills-cms">Plataformas (CMS)</h4>
+              <div class="tech-grid">
+                <div class="tech-tag"><i class="devicon-wordpress-plain colored"></i> WordPress</div>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </div>
     </section>
     <section id="projetos">
       <section class="margem">
-        <h3>Projetos</h3>
+        <h3 data-i18n="projects-title">Projetos</h3>
 
-        <h3 class="titulo-projetos">Sistemas Corporativos (Experiência Profissional)</h3>
-        <p class="disclaimer">
-            Os sistemas abaixo são projetos reais desenvolvidos profissionalmente para a Equatorial Energia (7 estados). Por razões de confidencialidade e segurança, o acesso é restrito e os dados sensíveis foram ocultados. Em todos estes projetos atuei como desenvolvedora Full Stack utilizando <b>Vue.js</b> e <b>.NET</b>.
+        <h3 class="titulo-projetos" data-i18n="projects-corp-title">Sistemas Corporativos (Experiência Profissional)
+        </h3>
+        <p class="disclaimer" data-i18n="projects-corp-disclaimer">
+          Os sistemas abaixo são projetos reais desenvolvidos profissionalmente para a Equatorial Energia (7 estados).
+          Por razões de confidencialidade e segurança, o acesso é restrito e os dados sensíveis foram ocultados. Em
+          todos estes projetos atuei como desenvolvedora Full Stack utilizando <b>Vue.js</b> e <b>.NET</b>.
         </p>
 
         <section>
-             <div>
-                <div>
-                  <h4>SISCO - Sistema de gerenciamento de Obras</h4>
-                  <h5>Em Produção</h5>
-                  <p class="p-projeto">Gerenciamento de levantamentos, anteprojetos, projetos e obras.</p>
-                  <div>
-                      <div class="btn-static">Sistema Interno</div>
-                      <figure>
-                          <i class="devicon-vuejs-plain colored"></i>
-                          <i class="devicon-dot-net-plain-wordmark colored"></i>
-                      </figure>
-                  </div>
-                </div>
-                <div class="placeholder-media">
-                   <img src="imagens/sites/sisco.png" alt="Print do sistema SISCO" />
-                </div>
-              </div>
-
+          <div>
+            <div>
+              <h4 data-i18n="proj-sisco-title">SISCO - Sistema de gerenciamento de Obras</h4>
+              <h5 data-i18n="proj-sisco-status">Em Produção</h5>
+              <p class="p-projeto" data-i18n="proj-sisco-desc">Gerenciamento de levantamentos, anteprojetos, projetos e
+                obras.</p>
               <div>
-                <div>
-                  <h4>SFM - Sistema de Fiscalização Mobile</h4>
-                  <h5>Em Produção</h5>
-                  <p class="p-projeto">Gerenciamento do processo de fiscalização de obras em campo.</p>
-                  <div>
-                      <div class="btn-static">Sistema Interno</div>
-                      <figure>
-                          <i class="devicon-vuejs-plain colored"></i>
-                          <i class="devicon-dot-net-plain-wordmark colored"></i>
-                      </figure>
-                  </div>
-                </div>
-                <div class="placeholder-media">
-                   <img src="imagens/sites/sfm.png" alt="Print do sistema SFM" />
-                </div>
+                <div class="btn-static" data-i18n="proj-sisco-btn">Sistema Interno</div>
+                <figure>
+                  <i class="devicon-vuejs-plain colored"></i>
+                  <i class="devicon-dot-net-plain-wordmark colored"></i>
+                </figure>
               </div>
+            </div>
+            <div class="placeholder-media">
+              <img src="imagens/sites/sisco.png" alt="Print do sistema SISCO" />
+            </div>
+          </div>
 
+          <div>
+            <div>
+              <h4 data-i18n="proj-sfm-title">SFM - Sistema de Fiscalização Mobile</h4>
+              <h5 data-i18n="proj-sfm-status">Em Produção</h5>
+              <p class="p-projeto" data-i18n="proj-sfm-desc">Gerenciamento do processo de fiscalização de obras em
+                campo.</p>
               <div>
-                <div>
-                  <h4>Oasis - Ajuste de Equipamentos</h4>
-                  <h5>Em Produção</h5>
-                  <p class="p-projeto">Sistema de gerenciamento de ajustes de equipamentos de alimentadores.</p>
-                  <div>
-                      <div class="btn-static">Sistema Interno</div>
-                      <figure>
-                          <i class="devicon-vuejs-plain colored"></i>
-                          <i class="devicon-dot-net-plain-wordmark colored"></i>
-                      </figure>
-                  </div>
-                </div>
-                <div class="placeholder-media">
-                   <img src="imagens/sites/oasis.png" alt="Print do sistema Oasis" />
-                </div>
+                <div class="btn-static" data-i18n="proj-sfm-btn">Sistema Interno</div>
+                <figure>
+                  <i class="devicon-vuejs-plain colored"></i>
+                  <i class="devicon-dot-net-plain-wordmark colored"></i>
+                </figure>
               </div>
+            </div>
+            <div class="placeholder-media">
+              <img src="imagens/sites/sfm.png" alt="Print do sistema SFM" />
+            </div>
+          </div>
 
+          <div>
+            <div>
+              <h4 data-i18n="proj-oasis-title">Oasis - Ajuste de Equipamentos</h4>
+              <h5 data-i18n="proj-oasis-status">Em Produção</h5>
+              <p class="p-projeto" data-i18n="proj-oasis-desc">Sistema de gerenciamento de ajustes de equipamentos de
+                alimentadores.</p>
               <div>
-                <div>
-                  <h4>Nova Ligação - Gestão de Clientes</h4>
-                  <h5>Em Produção</h5>
-                  <p class="p-projeto">Gerenciamento de novas ligações com novos clientes e parceiros.</p>
-                  <div>
-                      <div class="btn-static">Sistema Interno</div>
-                      <figure>
-                          <i class="devicon-vuejs-plain colored"></i>
-                          <i class="devicon-dot-net-plain-wordmark colored"></i>
-                      </figure>
-                  </div>
-                </div>
-                <div class="placeholder-media">
-                   <img src="imagens/sites/novaligacao.png" alt="Print do sistema Nova Ligação" />
-                </div>
+                <div class="btn-static" data-i18n="proj-oasis-btn">Sistema Interno</div>
+                <figure>
+                  <i class="devicon-vuejs-plain colored"></i>
+                  <i class="devicon-dot-net-plain-wordmark colored"></i>
+                </figure>
               </div>
+            </div>
+            <div class="placeholder-media">
+              <img src="imagens/sites/oasis.png" alt="Print do sistema Oasis" />
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <h4 data-i18n="proj-novaligacao-title">Nova Ligação - Gestão de Clientes</h4>
+              <h5 data-i18n="proj-novaligacao-status">Em Produção</h5>
+              <p class="p-projeto" data-i18n="proj-novaligacao-desc">Gerenciamento de novas ligações com novos clientes
+                e parceiros.</p>
+              <div>
+                <div class="btn-static" data-i18n="proj-novaligacao-btn">Sistema Interno</div>
+                <figure>
+                  <i class="devicon-vuejs-plain colored"></i>
+                  <i class="devicon-dot-net-plain-wordmark colored"></i>
+                </figure>
+              </div>
+            </div>
+            <div class="placeholder-media">
+              <img src="imagens/sites/novaligacao.png" alt="Print do sistema Nova Ligação" />
+            </div>
+          </div>
         </section>
 
-        <h3 class="titulo-projetos">Websites & Sistemas Acadêmicos</h3>
-        
+        <h3 class="titulo-projetos" data-i18n="projects-web-title">Websites & Sistemas Acadêmicos</h3>
+
         <section>
           <div>
             <div>
-              <h4>Site do ProFuturo - Projeto de Transformação e Crescimento Sustentável para o Campo.</h4>
-              <h5>Projeto de 2025</h5>
+              <h4 data-i18n="proj-profuturo-title">Site do ProFuturo - Projeto de Transformação e Crescimento
+                Sustentável para o Campo.</h4>
+              <h5 data-i18n="proj-profuturo-status">Projeto de 2025</h5>
               <div>
-                  <a href="https://profuturo.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
-                  <figure>
-                      <i class="devicon-figma-plain colored"></i> 
-                      <i class="devicon-wordpress-plain colored"></i>
-                  </figure>
+                <a href="https://profuturo.ifrn.edu.br"><input type="button" data-i18n="proj-profuturo-btn"
+                    value="Acessar Website!"></a>
+                <figure>
+                  <i class="devicon-figma-plain colored"></i>
+                  <i class="devicon-wordpress-plain colored"></i>
+                </figure>
               </div>
             </div>
             <figure class="mockup"> <img src="imagens/sites/profuturo.png" alt="imagem do site do ProFuturo" /></figure>
@@ -966,29 +1436,32 @@
 
           <div>
             <div>
-              <h4>Site da EXPOTEC CNAT 2024</h4>
-              <h5>Finalizado em 2025</h5>
+              <h4 data-i18n="proj-expotec-title">Site da EXPOTEC CNAT 2024</h4>
+              <h5 data-i18n="proj-expotec-status">Finalizado em 2025</h5>
               <div>
-                  <a href="https://expotec.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
-                  <figure>
-                      <i class="devicon-figma-plain colored"></i> 
-                      <i class="devicon-wordpress-plain colored"></i>
-                  </figure>
+                <a href="https://expotec.cnat.ifrn.edu.br"><input type="button" data-i18n="proj-expotec-btn"
+                    value="Acessar Website!"></a>
+                <figure>
+                  <i class="devicon-figma-plain colored"></i>
+                  <i class="devicon-wordpress-plain colored"></i>
+                </figure>
               </div>
             </div>
-            <figure class="mockup"> <img src="imagens/sites/expotec.png" alt="imagem do site da EXPOTEC 2024" /></figure>
+            <figure class="mockup"> <img src="imagens/sites/expotec.png" alt="imagem do site da EXPOTEC 2024" />
+            </figure>
           </div>
 
           <div>
             <div>
-              <h4>Site do Centro de Soluções Aplicadas (CSA)</h4>
-              <h5>Finalizado em 2023</h5>
+              <h4 data-i18n="proj-csa-title">Site do Centro de Soluções Aplicadas (CSA)</h4>
+              <h5 data-i18n="proj-csa-status">Finalizado em 2023</h5>
               <div>
-                  <a href="https://csa.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
-                  <figure>
-                      <i class="devicon-figma-plain colored"></i> 
-                      <i class="devicon-wordpress-plain colored"></i>
-                  </figure>
+                <a href="https://csa.cnat.ifrn.edu.br"><input type="button" data-i18n="proj-csa-btn"
+                    value="Acessar Website!"></a>
+                <figure>
+                  <i class="devicon-figma-plain colored"></i>
+                  <i class="devicon-wordpress-plain colored"></i>
+                </figure>
               </div>
             </div>
             <figure class="mockup"> <img src="imagens/sites/csa.png" alt="imagem do site do CSA" /></figure>
@@ -996,14 +1469,15 @@
 
           <div>
             <div>
-              <h4>Site da Diretoria Acadêmica de Indústria (DIACIN)</h4>
-              <h5>Finalizado em 2024</h5>
+              <h4 data-i18n="proj-diacin-title">Site da Diretoria Acadêmica de Indústria (DIACIN)</h4>
+              <h5 data-i18n="proj-diacin-status">Finalizado em 2024</h5>
               <div>
-                  <a href="https://diacin.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
-                  <figure>
-                      <i class="devicon-figma-plain colored"></i> 
-                      <i class="devicon-wordpress-plain colored"></i>
-                  </figure>
+                <a href="https://diacin.cnat.ifrn.edu.br"><input type="button" data-i18n="proj-diacin-btn"
+                    value="Acessar Website!"></a>
+                <figure>
+                  <i class="devicon-figma-plain colored"></i>
+                  <i class="devicon-wordpress-plain colored"></i>
+                </figure>
               </div>
             </div>
             <figure class="mockup"> <img src="imagens/sites/diacin.png" alt="imagem do site da DIACIN" /></figure>
@@ -1011,134 +1485,151 @@
 
           <div>
             <div>
-              <h4>Site da Diretoria Acadêmica de Gestão e Tecnologia da Informação (DIATINF)</h4>
-              <h5>Finalizado em 2023</h5>
+              <h4 data-i18n="proj-diatinf-title">Site da Diretoria Acadêmica de Gestão e Tecnologia da Informação
+                (DIATINF)</h4>
+              <h5 data-i18n="proj-diatinf-status">Finalizado em 2023</h5>
               <div>
-                  <a href="https://diatinf.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
-                  <figure>
-                      <i class="devicon-figma-plain colored"></i> 
-                      <i class="devicon-wordpress-plain colored"></i>
-                  </figure>
+                <a href="https://diatinf.cnat.ifrn.edu.br"><input type="button" data-i18n="proj-diatinf-btn"
+                    value="Acessar Website!"></a>
+                <figure>
+                  <i class="devicon-figma-plain colored"></i>
+                  <i class="devicon-wordpress-plain colored"></i>
+                </figure>
               </div>
             </div>
-            <figure class="mockup"> <img  src="imagens/sites/diatinf.png" alt="imagem do site da DIATINF" /></figure>
+            <figure class="mockup"> <img src="imagens/sites/diatinf.png" alt="imagem do site da DIATINF" /></figure>
           </div>
 
           <div>
             <div>
-              <h4>Site do Encontro Anual do Iecom em Comunicações, Redes e Criptografia (ENCOM)</h4>
-              <h5>Finalizado em 2024</h5>
+              <h4 data-i18n="proj-encom-title">Site do Encontro Anual do Iecom em Comunicações, Redes e Criptografia
+                (ENCOM)</h4>
+              <h5 data-i18n="proj-encom-status">Finalizado em 2024</h5>
               <div>
-                  <a href="https://encom.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
-                  <figure>
-                      <i class="devicon-figma-plain colored"></i> 
-                      <i class="devicon-wordpress-plain colored"></i>
-                  </figure>
+                <a href="https://encom.ifrn.edu.br"><input type="button" data-i18n="proj-encom-btn"
+                    value="Acessar Website!"></a>
+                <figure>
+                  <i class="devicon-figma-plain colored"></i>
+                  <i class="devicon-wordpress-plain colored"></i>
+                </figure>
               </div>
             </div>
-            <figure class="mockup"> <img  src="imagens/sites/encom.png" alt="imagem do site do ENCOM" /></figure>
+            <figure class="mockup"> <img src="imagens/sites/encom.png" alt="imagem do site do ENCOM" /></figure>
           </div>
 
           <div>
             <div>
-              <h4>Site da Diretoria de Extensão (DIREX)</h4>
-              <h5>Finalizado em 2023</h5>
+              <h4 data-i18n="proj-direx-title">Site da Diretoria de Extensão (DIREX)</h4>
+              <h5 data-i18n="proj-direx-status">Finalizado em 2023</h5>
               <div>
-                  <a href="https://direx.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
-                  <figure>
-                      <i class="devicon-figma-plain colored"></i> 
-                      <i class="devicon-wordpress-plain colored"></i>
-                  </figure>
+                <a href="https://direx.cnat.ifrn.edu.br"><input type="button" data-i18n="proj-direx-btn"
+                    value="Acessar Website!"></a>
+                <figure>
+                  <i class="devicon-figma-plain colored"></i>
+                  <i class="devicon-wordpress-plain colored"></i>
+                </figure>
               </div>
             </div>
-            <figure class="mockup"> <img  src="imagens/sites/direx.png" alt="imagem do site da Direx" /></figure>
+            <figure class="mockup"> <img src="imagens/sites/direx.png" alt="imagem do site da Direx" /></figure>
           </div>
 
           <div>
             <div>
-              <h4>Site do 19º Workshop de Tecnologia em Análise em Desenvolvimento de Sistemas e Informática para Internet (WTADS/ WINFO)</h4>
-              <h5>Finalizado em 2025</h5>
+              <h4 data-i18n="proj-wtads-title">Site do 19º Workshop de Tecnologia em Análise em Desenvolvimento de
+                Sistemas e Informática para Internet (WTADS/ WINFO)</h4>
+              <h5 data-i18n="proj-wtads-status">Finalizado em 2025</h5>
               <div>
-                  <a href="https://wtads.cnat.ifrn.edu.br"><input type="button" value="Acessar Website!"></a>
-                  <figure>
-                      <i class="devicon-figma-plain colored"></i> 
-                      <i class="devicon-wordpress-plain colored"></i>
-                  </figure>
+                <a href="https://wtads.cnat.ifrn.edu.br"><input type="button" data-i18n="proj-wtads-btn"
+                    value="Acessar Website!"></a>
+                <figure>
+                  <i class="devicon-figma-plain colored"></i>
+                  <i class="devicon-wordpress-plain colored"></i>
+                </figure>
               </div>
             </div>
-            <figure class="mockup"> <img  src="imagens/sites/wtads.png" alt="imagem do site do Wtads" /></figure>
+            <figure class="mockup"> <img src="imagens/sites/wtads.png" alt="imagem do site do Wtads" /></figure>
           </div>
 
           <div id="bemtevista">
             <div>
-              <h4>Site da rede social dedicada a moda: Bem te vista</h4>
-              <h5>Projeto de 2024</h5>
+              <h4 data-i18n="proj-bemtevista-title">Site da rede social dedicada a moda: Bem te vista</h4>
+              <h5 data-i18n="proj-bemtevista-status">Projeto de 2024</h5>
               <div>
-                  <a href="https://github.com/infoweb-projetos/Bem-te-vista"><input type="button" value="Acessar Github!"></a>
-                  <figure>
-                      <i class="devicon-react-original colored"></i> 
-                      <i class="devicon-nodejs-plain colored"></i>
-                  </figure>
+                <a href="https://github.com/infoweb-projetos/Bem-te-vista"><input type="button"
+                    data-i18n="proj-bemtevista-btn" value="Acessar Github!"></a>
+                <figure>
+                  <i class="devicon-react-original colored"></i>
+                  <i class="devicon-nodejs-plain colored"></i>
+                </figure>
               </div>
             </div>
-            <figure class="mockup"> <img  src="imagens/sites/bem-te-vista.png" alt="imagem do site do bem te vista" /></figure>
+            <figure class="mockup"> <img src="imagens/sites/bem-te-vista.png" alt="imagem do site do bem te vista" />
+            </figure>
           </div>
 
           <div id="soularte">
             <div>
-              <h4>Site do e-commerce de artesanato: Soul arte</h4>
-              <h5>Projeto de 2023</h5>
+              <h4 data-i18n="proj-soularte-title">Site do e-commerce de artesanato: Soul arte</h4>
+              <h5 data-i18n="proj-soularte-status">Projeto de 2023</h5>
               <div>
-                  <a href="https://github.com/PI-InfoWeb-CNAT/2023-Soul_Arte"><input type="button" value="Acessar Github!"></a>
-                  <figure>
-                      <i class="devicon-dot-net-plain-wordmark colored"></i>
-                  </figure>
+                <a href="https://github.com/PI-InfoWeb-CNAT/2023-Soul_Arte"><input type="button"
+                    data-i18n="proj-soularte-btn" value="Acessar Github!"></a>
+                <figure>
+                  <i class="devicon-dot-net-plain-wordmark colored"></i>
+                </figure>
               </div>
             </div>
-            <figure class="mockup"> <img  src="imagens/sites/soul-arte.png" alt="imagem do site do soul arte" /></figure>
+            <figure class="mockup"> <img src="imagens/sites/soul-arte.png" alt="imagem do site do soul arte" /></figure>
           </div>
-          
+
         </section>
       </section>
     </section>
 
     <section id="experiencia">
-        <div class="margem">
-            <h3>Experiência Profissional</h3>
-            <div class="mt">
-                <div class="exp-item">
-                    <h4>Desenvolvedora Full-Stack</h4>
-                    <h5>Agiltec: Geotecnologia da Inovação | 05/2025 - Atualidade</h5>
-                    <p>Atuação com desenvolvimento ASP.NET (Backend) e Vue.js (Frontend), no desenvolvimento de um sistema de gerenciamento de dados para a Equatorial Energia. Responsável pelo desenvolvimento de novas histórias de usuário, foco em qualidade, desempenho e requisitos técnicos.</p>
-                </div>
+      <div class="margem">
+        <h3 data-i18n="exp-title">Experiência Profissional</h3>
+        <div class="mt">
+          <div class="exp-item">
+            <h4 data-i18n="exp1-title">Desenvolvedora Full-Stack</h4>
+            <h5 data-i18n="exp1-place">Agiltec: Geotecnologia da Inovação | 05/2025 - Atualidade</h5>
+            <p data-i18n="exp1-desc">Atuação com desenvolvimento ASP.NET (Backend) e Vue.js (Frontend), no
+              desenvolvimento de um sistema de gerenciamento de dados para a Equatorial Energia. Responsável pelo
+              desenvolvimento de novas histórias de usuário, foco em qualidade, desempenho e requisitos técnicos.</p>
+          </div>
 
-                <div class="exp-item">
-                    <h4>Líder da Equipe de Web Design e Desenvolvimento</h4>
-                    <h5>Centro de Soluções Aplicadas - IFRN | 07/2023 - 02/2025</h5>
-                    <p>Líder da equipe matutina, responsável por criar e aprimorar soluções para o IFRN Campus Natal Central. Trabalhei com Figma, HTML, CSS, JS e PHP integrados ao WordPress, focando em usabilidade e coerência visual.</p>
-                </div>
-            </div>
+          <div class="exp-item">
+            <h4 data-i18n="exp2-title">Líder da Equipe de Web Design e Desenvolvimento</h4>
+            <h5 data-i18n="exp2-place">Centro de Soluções Aplicadas - IFRN | 07/2023 - 02/2025</h5>
+            <p data-i18n="exp2-desc">Líder da equipe matutina, responsável por criar e aprimorar soluções para o IFRN
+              Campus Natal Central. Trabalhei com Figma, HTML, CSS, JS e PHP integrados ao WordPress, focando em
+              usabilidade e coerência visual.</p>
+          </div>
         </div>
+      </div>
     </section>
     <section id="identidades">
       <section class="margem">
-        <h3>Identidades Visuais</h3>
+        <h3 data-i18n="identidades-title">Identidades Visuais</h3>
         <div>
           <figure><img src="imagens/identidades/nova-ligacao.svg" alt="Logo do projeto Nova Ligação" /></figure>
           <figure><img src="imagens/identidades/GeoForm - Fundo Branco.svg" alt="Logo do projeto GeoForm" /></figure>
           <figure><img src="imagens/identidades/bem-te-vista.svg" alt="Logo do projeto Bem te Vista" /></figure>
           <figure><img src="imagens/identidades/eco-patio.svg" alt="Logo do projeto Eco Patio" /></figure>
-          <figure><img src="imagens/identidades/jogos-internos.svg" alt="Logo dos jogos internos do IFRN 2024" /></figure>
+          <figure><img src="imagens/identidades/jogos-internos.svg" alt="Logo dos jogos internos do IFRN 2024" />
+          </figure>
         </div>
       </section>
     </section>
     <section id="vetorizacoes">
       <section class="margem">
-        <h3>Vetorizações</h3>
+        <h3 data-i18n="vetorizacoes-title">Vetorizações</h3>
         <div>
           <figure><img src="imagens/vetores/S2natal.svg" alt="vetorização de aspectos da cidade Natal/RN" /></figure>
-          <figure><img src="imagens/vetores/arenamidway.svg" alt="vetorização da Casa de Apostas Arena das Dunas e do Shopping Miwway Mall" /></figure>
-          <figure><img src="imagens/vetores/ifrnvetor.svg" alt="vetorização da frente IFRN campus Natl - Central" /></figure>
+          <figure><img src="imagens/vetores/arenamidway.svg"
+              alt="vetorização da Casa de Apostas Arena das Dunas e do Shopping Miwway Mall" /></figure>
+          <figure><img src="imagens/vetores/ifrnvetor.svg" alt="vetorização da frente IFRN campus Natl - Central" />
+          </figure>
         </div>
       </section>
     </section>
@@ -1147,9 +1638,9 @@
   <footer>
     <section class="margem">
       <div> <a href="index.html">
-          <p><b>Portfólio</b></p>
+          <p><b data-i18n="header-portfolio">Portfólio</b></p>
           <p>Iraikare Rodrigues</p>
-          <p id="copyright">© Desenvolvido por Iraikare Rodrigues</p>
+          <p id="copyright" data-i18n="footer-copyright">© Desenvolvido por Iraikare Rodrigues</p>
         </a></div>
       <ul>
         <li><a href="https://www.instagram.com/iraikare/"><img src="imagens/redes/insta.svg"></a></li>
@@ -1159,4 +1650,5 @@
     </section>
   </footer>
 </body>
+
 </html>
